@@ -1,0 +1,74 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<style type="text/css">
+.leftmenu li.min{ display:none;}
+
+.recruitBox{margin-top:20px;}
+.recruitBox h2{color:#e76902; font-size:18px; height:40px; line-height:40px; font-weight:bold; background:#f0f0f0; text-indent:20px;}
+.recruitBox .title{color:#5c4942; font-size:16px; height:30px; line-height:30px; font-weight:bold; text-indent:20px; margin-top:10px;}
+.recruitBox .con{ padding:10px 40px; font-size:14px; line-height:25px;}
+
+.Newlists{ margin-top:10px; padding-bottom:40px;}
+.newslist li{ font-size:16px;}
+.classlist{ height:30px; line-height:30px; padding-bottom:10px; border-bottom:1px solid #dedede; margin-top:20px;}
+.classlist a{ display:inline-block; width:80px; height:30px; line-height:30px; background:#f9efd4; text-align:center;color:#0db4e9; font-size:14px; margin-right:7px;}
+.classlist a:hover,.classlist a.on{ background:#fcca4f;color:#fff;}
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>        
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="mainBox clearfix">
+    	<div class="leftBox row_l">
+        	<div class="classname">
+            	<p class="en">ABOUT US</p><p class="cn">关于我们</p>
+            </div>
+            <include file='Common/leftmenu' type="about"/>
+        </div>
+        <div class="rightBox row_r">
+        	<div class="sitemap">您现在的位置：<a href="__ROOT__/">首页</a>><a href="__ROOT__/about">关于我们</a>><span>{$classname}</span></div>
+        	<div class="pagetitle">{$classname}</div>
+            <div class="classlist">
+            	<volist name='Cate' id='vo'><a href="__ROOT__/about/fazhanlicheng-{$vo.year}.html" class="cate_{$vo.year}">{$vo.year}年</a></volist>
+            </div>
+            <div class="Newlists">
+                <notempty name='lists'>
+                    <ul class="newslist">
+                        <volist name='lists' id='vo'>
+                        <li>{$vo.year}年{$vo.month}月&nbsp;&nbsp;{$vo.title}</li>
+                        </volist>
+                    </ul>
+               	 	<div class="listpage">{$_page}</div>
+                <else/>
+                	<div class="nodata">暂无相关内容</div>
+                </notempty>
+            </div>
+        </div>
+    </div>
+</div>
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(".cate_{$year}").addClass('on');
+</script>
+</block>

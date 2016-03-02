@@ -1,0 +1,115 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Paycord/index')}">充值卡管理</a>><span>充值卡列表</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">充值卡管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<select name="type" id="type" class="so_select" onChange="changeUrl(this.options[this.selectedIndex].value)">
+            <option value="999">== 选择充值卡金额 ==</option>
+            <volist name="cardType" id="value">            
+                <option value="{$key}">{$value}元充值卡</option>		
+			</volist>
+            </select>
+			<input type="text" name="sokey" id="sokey" class="so_input w150 h20" value="{:I('sokey')}" placeholder="输入充值卡卡号">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}"/>
+
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th>充值卡卡号</th>
+				<th width="17%">充值卡密码</th>
+				<th width="8%">充值卡金额</th>
+				<th width="13%">到期时间</th>
+				<th width="13%">生成时间</th>
+                <th width="12%">当前状态</th>
+				<th width="12%">操作选项</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Paycard/resort')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                    <td><if condition="$list['status'] neq 0">--<else/><input type="checkbox" class="select_id" name="check_id[]" value="{$list.id}"/></if></td>
+                    <td>{$list.cardnum}</td>
+                    <td>{$list.cardpwd}</td>
+                    <td>{$list.money} 元</td>
+                    <td>{$list.overtime|toDate='Y-m-d H:i:s'}</td>
+                    <td>{$list.create_time|toDate='Y-m-d H:i:s'}</td>
+                    <td>{$list.status_text}</td>
+                    <td class="editstyle"><a href="{:U('show?id='.$list['id'])}">查看</a>|<a class="confirm" href="{:U('del?id='.$list['id'])}">删除</a></td>
+                </tr>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="8">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l"><if condition="$Models['id'] gt 0"><a href="{:U('add?model='.$Models['id'].'&cateid='.$cateid)}" class="w100 h25">添加内容</a></if><a href="javascript:sent_act('resort');" class="w100 h25">设为已上架</a><!--a href="javascript:sent_act('generate');" class="w100 h25">生成所选</a--></div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                            <input type="hidden" name="type" id="type" value="{$type}"/>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="8"><div class="no_data">暂无任何相关充值卡</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+
+<block name="script">
+<script type="text/javascript">
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	
+$(function(){
+	highlight_subnav("{:U('index')}");
+	Think.setValue("type","{$type}");
+});
+
+//选择栏目
+function changeUrl(strinfo){
+	var c_url = "{:U('index?type=')}"+strinfo;
+	window.location.href = c_url;
+}
+
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

@@ -1,0 +1,45 @@
+<div class="header">
+    <div class="warp1200 clearfix">
+        <div class="logo row_l"><a href="__ROOT__/">{$WEB_NAME}</a></div>
+        <div class="favorite row_r"><a href="__ROOT__/">返回主页</a>|<a href="javascript:vod(0)" id="favorite" datatype="{$WEB_URL}##{$WEB_NAME}">收藏网站</a></div>
+    </div>    
+</div>
+<div class="warp1200">
+	<div class="banner">
+        <ul class="clearfix" id="navlist">
+        	<li class="nLi">
+            	<a href="__ROOT__/" class="nav_0">首 页</a>
+			</li>
+            <li class="nLi">
+                <a href="__ROOT__/about" class="nav_0">关于我们</a>
+                <div class="childmenu">
+                    <div class="nav_l"><div class="nav_r"><div class="nav_mid"><a href="__ROOT__/about">公司简介</a>|<a href="__ROOT__/about/fazhanlicheng">发展历程</a>|<a href="__ROOT__/about/qiyewenhua">企业文化</a>|<a href="__ROOT__/about/zuzhijiagou">组织架构</a>|<a href="__ROOT__/about/guanlituandui">管理团队</a></div></div></div>
+                </div>
+			</li>
+            <li class="nLi">
+            	<a href="__ROOT__/business" class="nav_0">公司业务</a>
+                <div class="childmenu">
+                    <div class="nav_l"><div class="nav_r"><div class="nav_mid"><a href="__ROOT__/business">主营产品</a>|<a href="__ROOT__/business/fuwumoshi">服务模式</a>|<a href="__ROOT__/business/yingxiaomoshi">营销模式</a>|<a href="__ROOT__/business/yinglimoshi">盈利模式</a></div></div></div>
+                </div>
+            </li>
+            <li class="nLi">
+            	<a href="__ROOT__/news" class="nav_0">新闻动态</a>
+            </li>
+            <li class="nLi">
+            	<a href="__ROOT__/job" class="nav_0">人才需求</a>
+                <div class="childmenu rencai" id="nav_4">
+                    <div class="nav_l"><div class="nav_r"><div class="nav_mid"><a href="__ROOT__/job">人才招聘</a>|<a href="__ROOT__/job/shangxueyuan">人才成长</a></div></div></div>
+                </div>
+            </li>
+            <li class="nLi">
+            	<a href="__ROOT__/contact" class="nav_0">联系我们</a>
+            </li>
+            <li class="nLi shop">
+            	<a href="{$SHOP_URl}" class="nav_0" target="_blank">商城</a>
+            </li>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">
+$("#navlist").slide({ type:"menu", titCell:".nLi", targetCell:".childmenu",delayTime:300,triggerTime:0,returnDefault:false});
+</script>

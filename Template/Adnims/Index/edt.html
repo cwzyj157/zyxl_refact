@@ -1,0 +1,95 @@
+<extend name="Common/basepage"/>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="">站点配置</a>><span>添加内容</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">修改个人资料</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>
+        </div>
+	</div>
+</block>
+<block name="style"></block>
+<block name="body">
+<div class="fromTable">
+    <form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">用户帐号：</td>
+				<td class="inp"><input type="text" name="adminname" id="adminname" class="f_input w200 readonly" readonly value="{$info.username|default=''}" /></td>
+			</tr>
+            <tr>
+				<td class="msg">真实姓名：</td>
+				<td class="inp"><input type="text" name="truename" id="truename" class="f_input w200" value="{$info.truename|default=''}" /><span class="f_tip" id="tip_truename">( * 请输入您的真实姓名 )</span></td>
+			</tr>
+			<tr>
+				<td class="msg">是否修改登录密码：</td>
+				<td class="inp">
+                	<label class="f_label" for="radio_a"><input type="radio" id="radio_a" onclick="$('#editPWD').show();" name="editpwd" value="1">修改</label>
+                    <label class="f_label" for="radio_b"><input type="radio" id="radio_b" onclick="$('#editPWD').hide();" name="editpwd" value="0">不修改</label>
+                </td>
+			</tr>
+			<tbody id="editPWD" style="display:none;">
+			<tr>
+				<td class="msg">输入原始密码：</td>
+				<td class="inp"><input type="password" name="oldpassword" id="oldpassword" class="f_input w200"/><span class="f_tip" id="tip_oldpassword">( * 输入原始登录密码 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">输入新密码：</td>
+				<td class="inp"><input type="password" name="password" id="password" class="f_input w200"/><span class="f_tip" id="tip_password">( * 新密码必须在6-20位之间 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">再次确认新密码：</td>
+				<td class="inp"><input type="password" name="repassword" id="repassword" class="f_input w200"/><span class="f_tip" id="tip_repassword">( * 确认新密码 )</span></td>
+			</tr>
+			</tbody>
+            <tr>
+				<td class="msg">E-mail地址：</td>
+				<td class="inp"><input type="text" name="email" id="email" class="f_input w200" value="{$info.email|default=''}"/><span class="f_tip" id="tip_email">( * 请输入Email地址 )</span></td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="保存修改" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var truename = $('#truename').val();
+		var email = $('#email').val();
+		var editpwd = $('input:radio[name="editpwd"]:checked').val();
+		if (truename == ''){
+			form_inputMsg('truename','您的真实姓名不能为空','error');
+			return false;
+		}
+		if (email == ''){
+			form_inputMsg('email','请输入您的Email地址','error');
+			return false;
+		}
+		if (editpwd == 1){
+			var oldpassword = $('#oldpassword').val();
+			var password = $('#password').val();
+			var repassword = $('#repassword').val();
+			if (oldpassword.length < 6 || oldpassword.length > 20){
+				form_inputMsg('oldpassword','请输入您的原始登录密码!','error');
+				return false;
+			}
+			if (password.length < 6 || password.length > 20){
+				form_inputMsg('password','登录密码必须在6-20位!如果不修改登录密码请保持为空!','error');
+				return false;
+			}
+			if (repassword != password){
+				form_inputMsg('repassword','两次输入的密码不一致,请重新输入!如果不修改登录密码请保持为空!','error');
+				return false;
+			}			
+		}
+	}	
+	Think.setValue("editpwd",0);
+	highlight_subnav('{:U('Index/edit')}');
+</script>
+</block>

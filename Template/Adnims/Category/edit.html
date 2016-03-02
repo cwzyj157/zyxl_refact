@@ -1,0 +1,140 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">系统设置</a>><a href="{:U('Menu/index')}">菜单列表</a>><present name='data'><a href="{:U('Menu/index?pid='.$data['pid'])}">{$data.title}</a>></present><span>{$page_tip.page_name}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}">菜单管理</a><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td width="220" class="msg">上级栏目：</td>
+				<td class="inp">
+                    <select name="pid" class="f_select">
+                        <volist name="Trees" id="tree">
+                            <option value="{$tree.id}">{$tree.title_show}</option>
+                        </volist>
+                    </select>
+                </td>
+			</tr>
+			<tr>
+				<td class="msg">栏目名称</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w200" value="{$info.title|default=''}" /><span class="f_tip" id="tip_title">( * 栏目标题不能为空 )</span></td>
+			</tr>  
+            <tr style="display:none">
+				<td class="msg">栏目目录</td>
+				<td class="inp"><input type="text" name="name" id="name" class="f_input w200" value="{$info.name|default=''}" /><span class="f_tip" id="tip_title">( * 栏目目录不能为空 )</span></td>
+			</tr>  
+          
+            <tr>
+				<td class="msg">模块类型：</td>
+				<td class="inp">
+                <if condition = "$info['model'] gt 0">
+					<label class="f_label" for="radio_{$info.model}"><input type="radio" id="radio_{$info.model}" name="model" value="{$info.model}">{$info.model|showmodel}</label>
+                <else/>
+					<volist name="Models" id="model">
+					<label class="f_label" for="radio_{$model.id}"><input type="radio" id="radio_{$model.id}" name="model" value="{$model.id}" >{$model.name}</label>
+					</volist>
+                </if>
+				</td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">是否在导航菜单显示：</td>
+				<td class="inp">
+					<label class="f_label" for="topshow_a"><input type="radio" id="topshow_a" name="topshow" value="1">显示</label>
+                    <label class="f_label" for="topshow_b"><input type="radio" id="topshow_b" name="topshow" value="0">不显示</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="msg">是否允许发布内容：</td>
+				<td class="inp">
+					<label class="f_label" for="radio_p_a"><input type="radio" id="radio_p_a" name="allow_publish" value="1">允许发布</label>
+                    <label class="f_label" for="radio_p_b"><input type="radio" id="radio_p_b" name="allow_publish" value="0">不允许</label>
+				</td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">是否指定二级域名：</td>
+				<td class="inp">
+					<label class="f_label" for="radio_d_a" onclick="sent_domain_type(1)"><input type="radio" id="radio_d_a" name="domain_type" value="1">是</label>
+                    <label class="f_label" for="radio_d_b" onclick="sent_domain_type(0)"><input type="radio" id="radio_d_b" name="domain_type" value="0">否</label>
+				</td>
+			</tr>
+            <tbody id="domaintype">
+            <tr>
+				<td class="msg" style="color:#00f;">设置二级域名：</td>
+				<td class="inp"><input type="text" name="second_domain" id="second_domain" class="f_input w300" value="{$info.second_domain|default=''}" />
+				  <span class="f_tip" id="tip_name">( * http:// 开头 )</span></td>
+			</tr>
+            </tbody>
+			<tr style="display:none">
+				<td class="msg">栏目首页模版：</td>
+				<td class="inp"><input type="text" name="template_index" id="template_index" class="f_input w300" value="{$info.template_index|default=''}" /><span class="f_tip" id="tip_name">( * 模版根目录：<a href="{:U('template/index')}" target="_blank"><u>./Template/</u></a> )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">内容页模版：</td>
+				<td class="inp"><input type="text" name="template_detail" id="template_detail" class="f_input w300" value="{$info.template_detail|default=''}" /><span class="f_tip" id="tip_name">( * 模版根目录：<a href="{:U('template/index')}" target="_blank"><u>./Template/</u></a> )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO标题：</td>
+				<td class="inp"><input type="text" name="seotitle" id="seotitle" class="f_input w500" value="{$info.seotitle|default=''}" /><span class="f_tip">( * 栏目SEO标题 )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO关键词：</td>
+				<td class="inp"><input type="text" name="keywords" id="keywords" class="f_input w500" value="{$info.keywords|default=''}" /><span class="f_tip">( * 栏目SEO关键词 )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO内容描述：</td>
+				<td class="inp"><textarea name="description" id="description" class="f_textarea" style="width:500px;height:80px;">{$info.description|default = ''}</textarea></td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" name="sort" id="sort" value="{$info.sort|default='1'}" /><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var title = $('#title').val();
+		var name = $('#name').val();
+		if (title == ''){
+			form_inputMsg('title','栏目标题不能为空,请输入标题','error');
+			return false;
+		}
+		/*if (name == ''){
+			form_inputMsg('name','栏目英文标识不能为空','error');
+			return false;
+		}*/
+	}
+	function sentInput(modelpage){
+		$('#template_index').val(modelpage+'_index');
+		$('#template_lists').val(modelpage+'_lists');
+		$('#template_detail').val(modelpage+'_detail');
+	}
+	Think.setValue("pid",{$info.pid|default = 0});
+	Think.setValue("domain_type",{$info.domain_type|default = 0});
+	Think.setValue("allow_publish", {$info.allow_publish|default = 1});
+	Think.setValue("topshow", {$info.topshow|default = 0});
+	Think.setValue("model",{$info.model|default = intval($data['model'])});
+	highlight_subnav('{:U('index')}');
+	sent_domain_type({$info.domain_type|default = 0});
+	function sent_domain_type(type){
+		if(type == 1){
+			$('#domaintype').show();
+		}else{
+			$('#domaintype').hide();
+		}
+	}
+</script>
+</block>

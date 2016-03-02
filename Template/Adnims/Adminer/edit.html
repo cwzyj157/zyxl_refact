@@ -1,0 +1,171 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.selectrule{height:35px; line-height:35px;}
+.selectrule label{cursor:pointer; font-size:14px;}
+.selectrule input{margin:0 5px;}
+.catelist{ padding-bottom:10px;}
+
+.quanxianList{border:1px solid #ddd;background-color:#fff;margin-top:10px;}
+.quanxianList:nth-child(1){margin-top:0px;}
+.quanxianList .B_memu{height:30px; line-height:30px;background-color:#f9f9f9;text-indent:10px; border-bottom:1px solid #dedede;}
+.quanxianList .B_memu label{cursor:pointer;font-size:14px; font-weight:bold;}
+.quanxianList .B_memu label input,.quanxianList .M_menu li input,.quanxianList .M_class label input{ margin:0 5px;}
+.quanxianList .M_class{height:30px; line-height:30px;text-indent:20px; background-color:#f1faff; margin-top:3px;}
+.quanxianList .M_class label{cursor:pointer;color:#03C;}
+.quanxianList .M_menu{padding:10px;}
+.quanxianList .M_menu ul{padding-left:20px;}
+.quanxianList .M_menu li{float:left;display:inline;width:160px;height:20px;line-height:20px;padding-left:20px;margin-top:10px;}
+.selectall{display:block; width:70px; height:30px; line-height:30px; text-align:center;color:#fff; background-color:#27324d;cursor:pointer; float:right; text-indent:0px; padding-left:0px;}
+.selectbll{display:block; width:70px; height:30px; line-height:30px; text-align:center;color:#333; background-color:#cedcff;cursor:pointer; float:right; text-indent:0px; padding-left:0px;}
+
+
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">参数配置</a>><span>{$page_tip.page_name}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}">管理员列表</a><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td width="220" class="msg">管理员帐号：</td>
+				<td class="inp"><input type="text" name="username" id="username" class="f_input w200" value="{$info.username|default=''}" /><span class="f_tip" id="tip_username">( * 管理员登录帐号,不能为空 )</span></td>
+			</tr>
+			<tr>
+				<td class="msg">真实姓名：</td>
+				<td class="inp"><input type="text" name="truename" id="truename" class="f_input w200" value="{$info.truename|default=''}" /><span class="f_tip" id="tip_truename">( * 管理员真实姓名 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">修改登录密码：</td>
+				<td class="inp"><input type="password" name="password" id="password" class="f_input w200" /><span class="f_tip" id="tip_password">( * 不修改登录密码请保持为空 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">再次输入登录密码：</td>
+				<td class="inp"><input type="password" name="repassword" id="repassword" class="f_input w200" /><span class="f_tip" id="tip_repassword">( * 再次输入密码 )</span></td>
+			</tr>
+            
+            <tr>
+				<td class="msg">管理员权限组：</td>
+				<td class="inp">
+                	<select name="groupid" class="f_select">
+                	<volist name="group" id="r_rs">
+						<option value="{$r_rs.id}">{$r_rs.title}</option>
+					</volist>
+                    </select>
+                    <span class="f_tip" id="tip_type">( * 系统会根据不同类型解析配置值 )</span>
+               </td>
+			</tr>
+            <tr>
+				<td class="msg">是否锁定帐号：</td>
+				<td class="inp">
+                <select name="islocked" class="f_select">
+                	<option value="0">正常状态</option>
+                    <option value="1">锁定状态</option>
+                </select>
+                <span class="f_tip" id="tip_type">( * 设置为锁定后，无法登录管理后台 )</span>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">栏目管理权限：</td>
+				<td class="inp">
+                	<div class="selectrule">
+                    	<label><input type="radio" name="authority_type" value="1" onclick="showrulelist(1);"/>所有栏目</label>
+                        <label style="margin-left:10px;"><input type="radio" name="authority_type" value="0" onclick="showrulelist(0);" />指定栏目</label>
+                    </div>
+                	<div id="catelist" class="catelist" <if condition="$authority_type eq 1">style="display:none;"</if>>
+                        <volist name='bigCate' id='vo'>
+                        <div class="quanxianList">
+                            <div class="B_memu"><label><input type="checkbox" name="uRules[]" id="cate_{$vo.id}" value="{$vo.id}" {$vo.checked}>{$vo.title}</label></div>
+                            <div class="M_menu">
+                            	<volist name='vo["childmenu"]' id='v'>
+                            	<div class="M_class"><label><input name="uRules[]" type="checkbox" id="cate_{$v.id}" value="{$v.id}" {$v.checked}/>{$v.title}</label></div>
+                                <notempty name='v["childmenu"]'>
+                                <ul class="clearfix Z_class">
+                                <volist name='v["childmenu"]' id='vm'>
+                                <li><label><input name="uRules[]" type="checkbox" value="{$vm.id}" id="cate_{$vm.id}" {$vm.checked} />{$vm.title}</label></li>
+                                </volist>
+                            	</ul>
+                                </notempty>
+                                </volist>
+							</div>      
+                        </div>
+                        </volist>
+                    </div>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function showrulelist(type){
+		if(type==1){
+			$('#catelist').hide();
+		}else{
+			$('#catelist').show();
+		}
+	}
+	
+	function check_from(){
+		var username = $('#username').val();
+		var truename = $('#truename').val();
+		var password = $('#password').val();
+		var repassword = $('#repassword').val();
+		var adminid = {$info.id|default = 0};
+		if (username == ''){
+			form_inputMsg('username','管理员登录帐号不能为空!','error');
+			return false;
+		}
+		if (username.length < 4 || username.length > 20){
+			form_inputMsg('username','管理员帐号必须在4-20位之间!','error');
+			return false;
+		}
+		if (truename == ''){
+			form_inputMsg('truename','管理员真实姓名不能为空!','error');
+			return false;
+		}
+		if (adminid > 0){
+			if (password.length > 0){
+				if (password.length < 6 || password.length > 20){
+					form_inputMsg('password','登录密码必须在6-20位!如果不修改登录密码请保持为空!','error');
+					return false;
+				}
+				if (repassword != password){
+					form_inputMsg('repassword','两次输入的密码不一致,请重新输入!如果不修改登录密码请保持为空!','error');
+					return false;
+				}			
+			}
+		}else{
+			if (password.length < 6 || password.length > 20){
+				form_inputMsg('password','登录密码必须在6-20位!如果不修改登录密码请保持为空!','error');
+				return false;
+			}
+			if (repassword != password){
+				form_inputMsg('repassword','两次输入的密码不一致,请重新输入!如果不修改登录密码请保持为空!','error');
+				return false;
+			}			
+		}
+	}
+	
+	Think.setValue("islocked", {$info.islocked|default=0});
+	Think.setValue("groupid", {$info.groupid|default=1});
+	Think.setValue("authority_type", {$authority_type|default=1});
+	highlight_subnav('{:U('index')}');
+</script>
+</block>

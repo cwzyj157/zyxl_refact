@@ -1,0 +1,52 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('group')}">系统设置</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Config/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<div class="result" style="height:50px; line-height:50px; text-align:center;color:#00f; font-size:14px;">{$result}</div>
+        <meta http-equiv="refresh" content="1; url={:U('group')}" />
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	highlight_subnav('{:U('delcache')}');
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

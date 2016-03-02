@@ -1,0 +1,39 @@
+        	<tr>
+                <td colspan="6"><div class="nowpath">
+                当前路径:<span>{$true_path}</span>
+                <a href="{:U('add?type='.$type.'&dir='.$path)}">添加新模版</a><!--a href="{:U('adddir?type='.$type.'&dir='.$path)}">新建文件夹</a-->
+                <if condition=" $show_fu eq 1">
+                <a href="{:U('index?type='.$type.'&path='.$fu_path)}">返回上级目录</a>
+                </if>
+                </div></td>
+            </tr>
+<notempty name="temp_tree">
+	<notempty name="dirlist">
+		 <volist name="dirlist" id="dirlist">
+            <tr>
+                <td><input type="checkbox" class="select_id" name="check_id" value="{$i}"/></td>                
+                <td><div class="dataTitile dir"><a href="<if condition=" $path neq '' ">{:U('index?type='.$type.'&path='.$path.'|'.$dirlist)}<else/>{:U('index?type='.$type.'&path='.$dirlist)}</if>">{$dirlist}</a></div></td>
+                <td>文件夹</td>
+                <td class="editstyle">----</td>
+                <td class="editstyle">----</td>
+                <td class="editstyle">----</td>
+            </tr>
+        </volist>
+    <else/>
+	</notempty>
+    
+    <volist name="filelist" id="filelist">
+        <tr>
+            <td><input type="checkbox" class="select_id" name="check_id" value="{$i}"/></td>
+            <td><div class="dataTitile file"><a href="{:U('edit?type='.$type.'&dir='.$path.'&name='.$filelist)}" class="dir">{$filelist}</a></div></td>
+            <td>模版文件</td>
+            <td></td>
+            <td></td>
+            <td class="editstyle"><a href="{:U('edit?type='.$type.'&dir='.$path.'&name='.$filelist)}" class="dir">编辑</a><if condition=" $type eq 0 ">|<a class="confirm" href="{:U('del?type='.$type.'&dir='.$path.'&name='.$filelist)}">删除</a></if></td>
+        </tr>
+    </volist>
+<else/>
+	<tr>
+    	<td colspan="6"><div class="no_data">该文件夹为空</div></td>
+    </tr>
+</notempty>

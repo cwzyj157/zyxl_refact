@@ -1,0 +1,116 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('index/index')}">管理首页</a>><span>{$meta_title}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$meta_title}管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+            <input type="text" name="sokey" id="sokey" class="so_input w150 h20" value="{:I('sokey')}" placeholder="请输入搜索关键词">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}&type={$type}"/>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="10%"><input type="checkbox" class="check_all" /></th>
+				<th width="15%">标签名称</th>
+                <th>文档标题</th>
+				<th width="10%">预览</th>
+                <th width="15%">更新时间</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Tags/resort')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                    <td><input type="checkbox" class="select_id" name="check_id[]" value="{$list.id}"/></td>
+                    <td>{$tagname}</td>
+                    <td><div class="dataTitile">{$list.title}</div></td>
+                    <td class="editstyle"><a href="{$list.id|detailurl=$list['create_time'],$list['pagepath']}" target="_blank">预览</a></td>
+                    <td>{$list.create_time|toDate='Y-m-d H:i:s'}</td> 
+                </tr>
+                </volist>
+                <if condition="$type neq 2 ">
+                <tr class="listpage">
+                	<td colspan="5">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l"><a href="javascript:sent_act('removetag');" class="w100 h25">从标签中移除</a><a href="{$Think.cookie.__forward__}" class="w100 h25">返回列表</a></div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                            <input type="hidden" name="tagid" id="tagid" value="{$tagid}"/>
+                        </div>
+                    </td>
+                </tr>
+                </if>
+            <else/>
+            	<tr><td colspan="5"><div class="no_data">暂无数据</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	highlight_subnav('{:U("tags/index")}');
+	var sType   = {$Think.config.CATEGORY_SHOWTYPE};
+	var sCuttle = {$Think.config.CATEGORY_MENU_CUTTLE};
+	var cateid  = {$cateid|default=0};
+	if (sType){
+		//左侧菜单是否折叠
+		if (sCuttle){
+			$('.menu_nav').hide();
+			if (!cateid){
+				$('.menu_tab').children('.menu_nav').eq(0).show();
+			}else{
+				$('.cate_'+cateid).parent('ul').show();
+			}
+			$('.cate_{$pid}').parent('ul').show();
+			//关闭或者打开Menu
+			$('.menu_tab h2').click(function (){
+				$('.menu_tab ul').slideUp(150);
+				submenu = $(this).parent().find('ul');
+				if (submenu.is(':visible'))
+					submenu.slideUp(150);	
+				else
+					submenu.slideDown(200);	
+			});
+		}
+	}
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

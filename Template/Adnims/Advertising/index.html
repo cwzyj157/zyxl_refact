@@ -1,0 +1,78 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.total_info{text-align:center; padding-left:25px;}
+.total_info .paging a{ margin:0 8px; padding:0 8px;}
+.apibox{padding:20px; text-align:center;}
+.apibox .code{width:500px; height:40px; border:1px solid #dedede; padding:10px; line-height:20px;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>{$meta_title}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<a href="{:U('detail')}">添加广告位</a>
+        </div>        
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+            	<th width="10%">广告位尺寸</th>
+				<th>广告位名称</th>
+                <th width="10%">广告类型</th>
+                <th width="15%">更新时间</th>
+				<th width="15%">操作选项</th>
+			</tr>
+			</thead>
+			<tbody>
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                	<td>{$list.width}x{$list.height}</td>
+                    <td class="title">{$list.title}</td>
+                    <td>{$list.status_text}</td>
+                    <td>{$list.update_time|toDate='Y-m-d H:i:s'}</td>
+                    <td class="editstyle"><a href="javascript:vod(0);" class="viewCode" data="{$list.id}">获取代码</a>|<a href="{:U('detail?id='.$list['id'])}">修改</a>|<a href="{:U('delete?id='.$list['id'])}" class="confirm">删除</a></td>
+                </tr>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="5">
+                    	<div class="action_page clearfix">
+                            <div class="page_no row_r">{$_page}</div>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="5"><div class="no_data">暂无数据</div></td></tr>
+            </notempty>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript" src="__COMMON__/widget/layer/layer.js"></script>
+<link rel="stylesheet" href="__COMMON__/widget/layer/skin/layer.css" type="text/css">
+<script type="text/javascript">
+$(function(){
+	//左侧高亮
+	highlight_subnav("{:U('index')}");	
+	$(".viewCode").bind("click",function(){
+		var data = $(this).attr('data');
+		var api_layer = '<div class="apibox"><textarea name="code" id="code" class="code"><script type=\"text/javascript\" src="/Ajax/Code/ids/'+data+'.html"><\/script></textarea></div>';
+		layer.open({
+			type: 1,
+			title: ['获取JS广告代码', 'font-size:16px;'],
+			shadeClose: true,
+			area: ['600px','auto'], //宽高
+			skin: 'layui-layer-rim', //加上边框
+			content:api_layer,
+		});
+	});
+
+});
+</script>
+</block>

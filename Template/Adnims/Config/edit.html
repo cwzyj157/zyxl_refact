@@ -1,0 +1,87 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">参数配置</a>><span>{$page_tip.page_name}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}">参数配置</a><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td width="220" class="msg">配置标识：</td>
+				<td class="inp"><input type="text" name="name" id="name" class="f_input w200" value="{$info.name|default=''}" /><span class="f_tip" id="tip_name">( * 用于C函数调用，限英文且不能重复 )</span></td>
+			</tr>
+			<tr>
+				<td class="msg">配置标题：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w200" value="{$info.title|default=''}" /><span class="f_tip" id="tip_title">( * 菜单标题不能为空 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">配置类型：</td>
+				<td class="inp">
+                	<select name="type" class="f_select">
+                	<volist name="Think.config.CONFIG_TYPE_LIST" id="type">
+						<option value="{$key}">{$type}</option>
+					</volist>
+                    </select>
+                    <span class="f_tip" id="tip_type">( * 系统会根据不同类型解析配置值 )</span>
+               </td>
+			</tr>
+            <tr>
+				<td class="msg">配置分组：</td>
+				<td class="inp">
+                <select name="group" class="f_select">
+                	<option value="0">不分组</option>
+                    <volist name="Think.config.CONFIG_GROUP_LIST" id="group">
+                    	<option value="{$key}">{$group}</option>
+                    </volist>
+                </select>
+                <span class="f_tip" id="tip_type">( * 设置分组之后可以在"网站设置"中编辑 )</span>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">排列序号：</td>
+				<td class="inp"><input type="text" name="sort" id="sort" class="f_input w60" value="{$info.sort|default='0'}" /><span class="f_tip">( * 显示的排列序号 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">配置值：</td>
+				<td class="inp"><textarea name="value" id="value" class="f_textarea" style="width:500px;height:80px;">{$info.value|default = ''}</textarea></td>
+			</tr>
+            <tr>
+				<td class="msg">枚举型配置项：</td>
+				<td class="inp"><textarea name="extra" id="extra" class="f_textarea" style="width:500px;height:80px;">{$info.extra|default = ''}</textarea></td>
+			</tr>
+            <tr>
+				<td class="msg">详细说明：</td>
+				<td class="inp"><textarea name="remark" id="remark" class="f_textarea" style="width:500px;height:80px;">{$info.remark|default = ''}</textarea></td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var title = $('#title').val();
+		if (title == ''){
+			form_inputMsg('title','菜单标题不能为空,请输入标题','error');
+			return false;
+		}
+	}	
+	Think.setValue("type", {$info.type|default=0});
+	Think.setValue("group", {$info.group|default=0});
+	highlight_subnav('{:U('index')}');
+</script>
+</block>

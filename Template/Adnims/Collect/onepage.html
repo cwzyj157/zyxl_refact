@@ -1,0 +1,55 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.colldemo a{margin-right:10px;color:#c00;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Collect/index')}">内容采集</a>><span>采集小助手</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">采集小助手</a></div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U('collsingle')}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">选择目标站：</td>
+				<td class="inp">
+                	<select name="sitetype" id="sitetype" class="f_select">
+                    	<volist name='colldemo' id='list'>
+                        <option value="{$key}">{$list.title}</option>
+                        </volist>
+					</select>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">目标内容页地址：</td>
+				<td class="inp"><input type="text" name="collurl" id="collurl" class="f_input w500" /><span class="f_tip" id="tip_collurl">( * 目标内容页地址 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">支持的目标站：</td>
+				<td class="inp colldemo"><volist name='colldemo' id='list'><a href="{$list.url}" target="_blank">{$list.title}</a></volist></td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="submit" name="submit" id="submit" class="btn w100 h30" value="开始采集" /></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var collurl = $('#collurl').val();
+		if (collurl == ''){
+			form_inputMsg('collurl','请输入采集目标站内容页地址','error');
+			return false;
+		}
+	}
+	highlight_subnav('{:U('collect/onepage')}');
+</script>
+</block>

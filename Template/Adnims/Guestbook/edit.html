@@ -1,0 +1,94 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('index')}">在线留言管理</a>><span>查看留言</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form"></div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="300">表单类型：</td>
+				<td class="inp">{$Type_Config[$info['ordertype']]}</td>
+			</tr>
+            <tr>
+				<td class="msg">Update Time：</td>
+				<td class="inp">{$info.update_time|toDate='Y-m-d H:m:s','FF0000'}</td>
+			</tr>
+            <tr>
+				<td class="msg">Chinese Name：</td>
+				<td class="inp">{$info.infos.chinesename}</td>
+			</tr>
+            <tr>
+				<td class="msg">Gender：</td>
+				<td class="inp">{$info.infos.gender}</td>
+			</tr>
+            <tr>
+				<td class="msg">ID number or passport number：</td>
+				<td class="inp">{$info.infos.passportnumber}</td>
+			</tr>
+            <tr>
+				<td class="msg">Date of birth：</td>
+				<td class="inp">{$info.infos.birthday}</td>
+			</tr>
+            <tr>
+				<td class="msg">Common contact number：</td>
+				<td class="inp">{$info.infos.contactnumber}</td>
+			</tr>
+            <tr>
+				<td class="msg">Emergency contact number：</td>
+				<td class="inp">{$info.infos.emergencynumber}</td>
+			</tr>
+            <tr>
+				<td class="msg">Whether graduates：</td>
+				<td class="inp">{$info.infos.graduates}</td>
+			</tr>
+            <tr>
+				<td class="msg">University：</td>
+				<td class="inp">{$info.infos.university}</td>
+			</tr>
+            <tr>
+				<td class="msg">Intention course：</td>
+				<td class="inp">{$info.infos.intentionsourse}</td>
+			</tr>
+            <tr>
+				<td class="msg">Profession：</td>
+				<td class="inp">{$info.infos.profession}</td>
+			</tr>
+            <tr>
+				<td class="msg">Grade：</td>
+				<td class="inp">{$info.infos.grade}</td>
+			</tr>
+            <tr>
+				<td class="msg">The address of the transcript：</td>
+				<td class="inp">{$info.infos.address}</td>
+			</tr>
+            <tr>
+				<td class="msg">Reference format：</td>
+				<td class="inp">{$info.infos.reference}</td>
+			</tr>
+            <tr>
+				<td class="msg">Example：</td>
+				<td class="inp">{$info.infos.example}</td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	highlight_subnav('{:U('index')}');
+</script>
+</block>

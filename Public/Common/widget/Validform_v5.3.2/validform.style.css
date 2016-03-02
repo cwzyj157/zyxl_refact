@@ -1,0 +1,49 @@
+.koo_fromBox{}
+.input50{width:50px;}.input100{width:100px;}.input150{width:150px;}.input200{width:200px;}.input228{width:238px;}.input240{width:240px;}.input300{width:300px;}.input400{width:400px;}.input500{width:500px;}
+.form_control{height:36px;margin-top:20px;}
+.form_control_t{margin-top:20px;}
+.form_control .form_label{float:left;display:block;width:140px;text-align:right;padding-right:10px; height:36px;line-height:36px;font-size:14px;}
+.form_control .form_label em{color:#f00; margin:0 3px; font-weight:bold;}
+.form_control .form_input{float:left;height:34px;line-height:34px;border-top:1px solid #848484;border-left:1px solid #848484;border-right:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0; padding:0 5px; font-size:14px;}
+.form_control .form_input.layDate{background:url(layDate.png) right center no-repeat;cursor:pointer;}
+.form_control .form_select{float:left;height:34px;line-height:34px;font-size:14px;list-style:25px;}
+.form_control .form_radio{float:left;height:34px;line-height:34px;cursor:pointer;font-size:14px;}
+.form_control .form_radio span{margin:0 20px 0 5px;}
+.form_control .input_tip{float:left;display:block;height:36px;line-height:36px;padding-left:0px;color:#999;padding-left:10px; font-size:14px;color:#039;}
+.form_control .Validform_checktip{float:left;display:block;height:36px;line-height:36px;padding-left:0px;color:#999;padding-left:10px;}
+.form_control .Validform_wrong{color:#f00;background:url(Validform_tipimg.gif) 15px -90px no-repeat;padding-left:35px;}
+.form_control .Validform_right{color:#009f12;background:url(Validform_tipimg.gif) 15px -140px no-repeat;padding-left:35px;}
+.form_control .Validform_msg{color:#3b6aca;background:url(Validform_tipimg.gif) 15px 10px no-repeat;padding-left:35px;}
+.form_control .Validform_loading{background:url(Validform_load.gif) 15px 9px no-repeat;color:#999;padding-left:35px;}
+.form_control .form_input.Validform_error{border:1px solid #f00;color:#f00;}
+.form_control .botton{ padding-left:150px;}
+.form_control .form_btn{display:inline-block;width:250px;height:34px;line-height:34px; text-align:center; background-color:#00afe9;color:#fff; border:1px solid #00afe9; font-size:14px; font-weight:bold;}
+.form_control .form_btn:hover{background-color:#00a6dd;}
+.form_control .form_btn.chdbtn{width:100px;margin-left:20px;color:#eee;}
+.form_control a.form_abtn{ display:block;width:180px;height:34px;line-height:34px; text-align:center; background-color:#d4004c;color:#fff; border:1px solid #d4004c; font-size:14px; font-weight:bold;}
+.form_control a.form_abtn:hover{background-color:#a4003b;}
+.form_control .form_btn.disabled{background-color:#ccc;border:1px solid #ccc;color:#fff; font-weight:normal;}
+.form_control_t .form_label{float:left;display:block;width:140px;text-align:right;padding-right:10px; height:36px;line-height:36px;font-size:14px;}
+.form_control_t .form_radio{}
+
+.form_control_t .f_textarea{float:left;}
+.form_control_t .f_editor{float:left;}
+.form_control_t .f_textarea .form_textarea{width:450px; height:80px; padding:5px;}
+.form_control_t .f_textarea .Validform_checktip{height:34px;line-height:34px;color:#999;}
+.form_control_t .f_textarea .Validform_wrong{color:#f00;background:url(Validform_tipimg.gif) 5px -100px no-repeat;padding-left:25px;}
+.form_control_t .f_textarea .Validform_right{color:#009f12;background:url(Validform_tipimg.gif) 5px -150px no-repeat;padding-left:25px;}
+.form_control_t .f_textarea .Validform_msg{color:#3b6aca;background:url(Validform_tipimg.gif) 5px 0px no-repeat;padding-left:25px;}
+
+.form_control_tip{margin-top:10px; height:20px; line-height:20px;padding-left:150px;color:#666;}
+.form_control_tip .getCode{color:#00f;cursor:pointer;}
+.form_control_tip .disabled{color:#999;}
+#verifybox{position:relative;}
+#verifyimg{position:absolute;bottom:40px;left:150px;cursor:pointer;border:1px solid #ddd;display:none;}
+/*找回密码*/
+.getpwd{padding-left:150px; width:252px; margin-top:15px;}
+.getpwd .keeplogin{height:20px; line-height:20px;}
+.getpwd .keeplogin label{cursor:pointer;color:#666}
+.getpwd .pwd{height:20px; line-height:20px;}
+.getpwd .pwd a{color:#f00;}
+/*百度编辑器重复样式*/
+.form_control_ueditor{margin-top:20px; margin-left:50px;}

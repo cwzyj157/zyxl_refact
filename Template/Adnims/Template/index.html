@@ -1,0 +1,68 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.dataTitile.dir,.dataTitile.file{background:url(__H_STATIC__img/dirico.gif) no-repeat; padding-left:33px; height:30px; line-height:30px;}
+.dataTitile.dir{ background-position:10px 10px;}
+.dataTitile.dir a{color:#00f; text-decoration:underline;}
+.dataTitile.file{ background-position:10px -30px;}
+.dataTitile.file a{color:#008000; text-decoration:underline;}
+.nowpath{height:40px; line-height:40px; color:#C00; padding-left:10px;font-size:14px; text-align:left;}
+.nowpath span{ margin-left:50px;}
+.nowpath a{margin:0 10px;}
+.nowpath a{background-color:#0061ce;color:#fff; font-size:12px; padding:3px 10px}
+.nowpath a:hover{background-color:#004a9d;color:#ff0; text-decoration:none;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/index')}">其他设置</a>><span>{$Type_Config[$type]}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$Type_Config[$type]}管理</a></div>
+	<div class="soType clearfix">
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+            	<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th width="30%">文件类型/名称</th>
+                <th width="20%">模版类型</th>
+				<th width="12%">文件大小</th>				
+				<th width="18%">最近修改时间</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+            {:R('Template/tree',array($tree))}
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	var type = parseInt({$type});
+	var navurl = "{:U('index?type='.$type)}";
+	highlight_subnav(navurl);
+});
+</script>
+</block>

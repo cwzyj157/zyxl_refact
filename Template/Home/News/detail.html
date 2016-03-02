@@ -1,0 +1,67 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<style type="text/css">
+.leftmenu li.min{ display:none;}
+.NewsContent{ padding:20px;}
+.content{ padding-top:40px;}
+
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>      
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="mainBox clearfix">
+    	<div class="leftBox row_l">
+        	<div class="classname">
+            	<p class="en">News Information</p><p class="cn">新闻动态</p>
+            </div>
+            <include file='Common/leftmenu' type="news"/>
+        </div>
+        <div class="rightBox row_r">
+        	<div class="sitemap">您现在的位置：<a href="__ROOT__/">首页</a>><a href="__ROOT__/news">新闻动态</a>><span>新闻内容</span></div>
+            <div class="NewsContent">
+                <div class="articleBox">
+                    <div class="contitle">{$info.title}</div>
+                    <div class="infos clearfix">
+                        <div class="date row_r"><i class="fa fa-clock-o"></i>{$info.create_time|toDate='Y-m-d H:i:s'}</div>
+                    </div>                
+                    <div class="content">{$new_Content}</div>
+                    {$new_Page}
+                </div>
+                <div class="con_page clearfix">
+                    <p class="row_l">上一篇：<a href="{$prevPage.url}" title="{$prevPage.title}">{$prevPage.title}</a></p>
+                    <p class="row_r">下一篇：<a href="{$nextPage.url}" title="{$nextPage.title}">{$nextPage.title}</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(".rencaichengzhang").on("click",function(){
+     $('.leftmenu li.min').toggle();
+});	
+</script>
+</block>

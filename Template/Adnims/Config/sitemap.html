@@ -1,0 +1,22 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('group')}">系统设置</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Config/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<div class="result" style="height:50px; line-height:50px; text-align:center;color:#00f; font-size:14px;">{$result}</div>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	highlight_subnav('{:U("sitemap")}');
+});
+</script>
+</block>

@@ -1,0 +1,151 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.total_info{text-align:center; padding-left:25px;}
+.total_info .paging a{ margin:0 8px; padding:0 8px;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Data/index')}">内容管理</a>><span><present name='data'>{$data.title}&nbsp;&nbsp;</present>文档管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$Models.smp_name|default='内容'}管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<if condition="$cateid gt 0"><a href="{:U('add?cateid='.$cateid)}" class="w80 h25">添加新{$Models.smp_name|default='内容'}</a></if>
+        	<select name="cateid" id="cateid" class="so_select" onChange="changeUrl(this.options[this.selectedIndex].value)">
+            <option value="0">== 选择栏目 ==</option>
+            <volist name="classMap" id="Maps">            
+                <if condition="$model gt 0">
+                	<if condition="$Maps['model'] == $model">
+                    	<option value="{$Maps.id}">{$Maps.title_show}</option>
+                    </if>
+                <else />
+                	<option value="{$Maps.id}">{$Maps.title_show}</option>
+                </if>			
+			</volist>
+            </select>
+            <input type="text" name="sokey" id="sokey" class="so_input w150 h20" value="{:I('sokey')}" placeholder="请输入菜单名称">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}&cateid={$cateid}&model={$Models.id}"/>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th width="6%">ID</th>
+				<th>文档标题</th>
+				<th width="12%">栏目</th>
+				<th width="10%">排序</th>
+				<th width="15%">更新时间</th>
+				<th width="12%">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Data/resort')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                    <td><input type="checkbox" class="select_id" name="check_id" value="{$list.id}"/></td>
+                    <td>{$list.id}</td>
+                    <td><div class="dataTitile"><a href="{:U('edit?id='.$list['id'])}">{$list.title|titlestyle=$list['titlecolor'],$list['titletype']}</a><span class="label">{$list.label|showlabel}</span>{$list.id|getExtend}</div></td>
+                    <td class="tdlink">
+                    <a href="{:U('?cateid='.$list['cateid'])}">{$list.cate_name}</a>
+                    </td>
+                    <td><input type="text" name="sort_{$list.id}" value="{$list.sort}" class="reset_sort" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
+                    <td>{$list.create_time|toDate='Y-m-d H:i:s','FF0000'}</td>
+                    <td class="editstyle"><a href="{:U('edit?id='.$list['id'])}">编辑</a>|<a class="confirm" href="{:U('del?id='.$list['id'])}">删除</a></td>
+                </tr>
+                </volist>
+                
+                <tr class="listpage">
+                	<td colspan="7">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l"><a href="{:U('add?model='.$Models['id'].'&cateid='.$cateid)}" class="w100 h25">添加内容</a><a href="javascript:sent_act('resort');" class="w100 h25">更改本页排序</a><!--a href="javascript:sent_act('generate');" class="w100 h25">生成所选</a--></div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                            <input type="hidden" name="pid" id="pid" value="{$pid}"/>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="7"><div class="no_data">暂无任何相关文档</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	var sType   = {$Think.config.CATEGORY_SHOWTYPE};
+	var sCuttle = {$Think.config.CATEGORY_MENU_CUTTLE};
+	var cateid  = {$cateid|default=0};
+	if (sType){
+		//左侧菜单是否折叠
+		if (sCuttle){
+			$('.menu_nav').hide();
+			if (!cateid){
+				$('.menu_tab').children('.menu_nav').eq(0).show();
+			}else{
+				$('.cate_'+cateid).parent('ul').show();
+			}
+			$('.cate_{$pid}').parent('ul').show();
+			//关闭或者打开Menu
+			$('.menu_tab h2').click(function (){
+				$('.menu_tab ul').slideUp(150);
+				submenu = $(this).parent().find('ul');
+				if (submenu.is(':visible'))
+					submenu.slideUp(150);	
+				else
+					submenu.slideDown(200);	
+			});
+		}
+		highlight_subnav('{:U('index?cateid='.$cateid)}');
+		highlight_subnav('{:U('index?cateid='.$pid)}');
+	}else{
+		highlight_subnav('{:U('index?model='.$Models['id'])}');
+	}	
+	Think.setValue("cateid","{$cateid}");
+});
+
+//选择栏目
+function changeUrl(strinfo){
+	var c_url = "{:U('index?cateid=')}"+strinfo;
+	window.location.href = c_url;
+}
+
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

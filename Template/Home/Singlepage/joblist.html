@@ -1,0 +1,66 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<style type="text/css">
+.leftmenu li.min{ display:none;}
+
+.recruitBox{margin-top:20px;}
+.recruitBox h2{color:#e76902; font-size:18px; height:40px; line-height:40px; font-weight:bold; background:#f0f0f0; text-indent:20px;}
+.recruitBox .title{color:#5c4942; font-size:16px; height:30px; line-height:30px; font-weight:bold; text-indent:20px; margin-top:10px;}
+.recruitBox .con{ padding:10px 40px; font-size:14px; line-height:25px;}
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>      
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="mainBox clearfix">
+    	<div class="leftBox row_l">
+        	<div class="classname">
+            	<p class="en">TALENT DEMAND</p><p class="cn">人才需求</p>
+            </div>
+            <include file='Common/leftmenu' type="job"/>
+        </div>
+        <div class="rightBox row_r">
+        	<div class="sitemap">您现在的位置：<a href="__ROOT__/">首页</a>><a href="__ROOT__/contact">人才需求</a>><span>人才招聘</span></div>
+        	<div class="pagetitle">人才招聘</div>
+            <div class="contentBox">
+                    <volist name='lists' id='vo'>
+                    <div class="recruitBox">
+                    	<h2>☆ {$vo.title}</h2>
+                        <div class="title">岗位职责：</div>
+                        <div class="con">{$vo.zhize|nl2br}</div>
+                        <div class="title">职位要求：</div>
+                        <div class="con">{$vo.yaoqiu|nl2br}</div>
+                    </div>
+                    </volist>
+            </div>
+        </div>
+    </div>
+</div>
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(".rencaichengzhang").on("click",function(){
+     $('.leftmenu li.min').toggle();
+});	
+</script>
+</block>

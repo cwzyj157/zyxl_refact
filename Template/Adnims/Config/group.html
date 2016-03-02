@@ -1,0 +1,61 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/index')}">系统设置</a>><span>站点设置</span></block>
+<block name="pagelink">
+	<div class="pageUrl">
+        <volist name="Think.config.CONFIG_GROUP_LIST" id="group">
+            <a href="{:U('?id='.$key)}" <eq name="id" value="$key">class="cur"</eq>>{$group}配置</a>
+        </volist>
+    </div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U('save?id='.$id)}" method="post" onSubmit="return check_from()">
+		<table>
+        <volist name="list" id="config">
+			<tr>
+				<td class="msg" width="220">{$config.title}：</td>
+				<td class="inp">
+                <switch name="config.type">
+                <case value="0"><input type="text" name="config[{$config.name}]" class="f_input w100" value="{$config.value}" /></case>
+                <case value="1"><input type="text" name="config[{$config.name}]" class="f_input w400" value="{$config.value}" /></case>
+                <case value="2"><textarea name="config[{$config.name}]" id="value" class="f_textarea" style="width:500px;height:60px;">{$config.value}</textarea></case>
+                <case value="3"><textarea name="config[{$config.name}]" id="value" class="f_textarea" style="width:500px;height:80px;">{$config.value}</textarea></case>
+				<case value="4">
+					<select name="config[{$config.name}]" class="f_select">
+					<volist name=":parse_config_attr($config['extra'])" id="vo">
+						<option value="{$key}" <eq name="config.value" value="$key">selected</eq>>{$vo}</option>
+					</volist>
+					</select>				
+				</case>
+				</switch><span class="f_tip" id="tip_title">( * {$config.remark} )</span></td>
+			</tr>
+       </volist>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="type" name="type" value="{$info.type|default = $type}"/><input type="hidden" id="id" name="id" value="保存设置" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="保存设置" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		question = confirm("您确定这些参数设置吗?")               
+		if (question == "0"){  
+			return false;              
+		} 
+	}
+	Think.setValue("status", {$info.status|default = 1});
+	highlight_subnav('{:U('Config/group')}');
+</script>
+</block>

@@ -1,0 +1,77 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><span>{$meta_title}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form"></div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="20%">表格类型</th>
+				<th width="15%">姓名</th>
+				<th width="15%">性别</th>
+				<th width="15%">状态</th>
+                <th width="15%">提交时间</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Links/resort')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="list">
+                <if condition="$list['ordertype'] eq 1">
+                <tr>
+                    <td>{$Type_Config[$list['ordertype']]}</td>
+                    <td>{$list.info.chinesename}</td>
+                    <td>{$list.info.gender}</td>
+                    <td>{$list.status_text}</td>
+                    <td>{$list.update_time|toDate='Y-m-d H:m:s','FF0000'}</td>
+                    <td class="editstyle"><a href="{:U('edit?id='.$list['id'])}">查看</a>|<a class="confirm" href="{:U('del?id='.$list['id'])}">删除</a></td>
+                </tr>
+                <else/>
+                <tr>
+                    <td>{$Type_Config[$list['ordertype']]}</td>
+                    <td>{$list.info.part_1_name}</td>
+                    <td>{$list.info.part_1_gender}</td>
+                    <td>{$list.status_text}</td>
+                    <td>{$list.update_time|toDate='Y-m-d H:m:s','FF0000'}</td>
+                    <td class="editstyle"><a href="{$Think.config.WEB_URL_EN}/applynow/show?id={$list.id}" target="_blank">查看</a>|<a class="confirm" href="{:U('del?id='.$list['id'])}">删除</a></td>
+                </tr>
+                </if>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="7">
+                    	<div class="action_page clearfix">
+                            <div class="page_no row_r">{$_page}</div>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="7"><div class="no_data">暂无任何留言</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	//左侧高亮
+	highlight_subnav("{:U('index?type='.$ordertype)}");
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

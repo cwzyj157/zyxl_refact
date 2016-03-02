@@ -1,0 +1,82 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.datatype{height:25px; line-height:25px; padding:15px; text-align:left;}
+.datatype a{ display:inline-block; height:23px; border:1px solid #dedede; line-height:23px; margin:0 10px; padding:0 20px; background:#f9f9f9;}
+.datatype a.on,.datatype a:hover{ background:#FEF7E7; text-decoration:none;color:#c00; border:1px solid #e4b057;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:vod(0);" class="cur">{$meta_title}</a></div>
+	<div class="row_r so_Form">
+        	<a href="{:U('detail?status='.$status)}">添加单页内容</a>
+        </div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+        <form name="form1" id="form1" action="{:U('resort')}" method="post">
+			<thead>
+            <tr class="listpage">
+                	<td colspan="5">
+                    	<div class="datatype">
+                        	<volist name='TYPE_CONFIG' id='vo'><a href="{:U('index?status='.$key)}" class="type_{$key}">{$vo}</a></volist>
+                            <script type="text/javascript">$('.type_{$status}').addClass('on')</script>
+                        </div>
+                    </td>
+                </tr>
+                
+			<tr>
+            	<th width="10%">页面ID</th>
+				<th>页面名称</th>
+                <th width="12%">排序</th>
+				<th width="15%">更新时间</th>
+				<th width="15%">操作</th>
+			</tr>
+			</thead>
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                	<td>{$list.id}</td>
+                    <td>{$list.title}</td>
+                    <td><input type="text" name="sort_{$list.id}" value="{$list.sort}" class="reset_sort" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
+                    <td>{$list.upload_time|toDate='Y-m-d H:i:s','FF0000'}</td>
+                    <td class="editstyle"><a href="{:U('detail?id='.$list['id'])}">编辑</a>|<a class="confirm" href="{:U('delete?id='.$list['id'])}">删除</a></td>
+                </tr>
+                </volist> 
+                <tr class="listpage">
+                	<td colspan="5">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l">
+                            <a href="javascript:sent_act('resort');" class="w100 h25">更改本页排序</a>
+                            </div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                            <input type="hidden" name="type" id="type" value="{$type}"/>
+                        </div>
+                    </td>
+                </tr>               
+            <else/>
+            	<tr><td colspan="5"><div class="no_data">暂无任何相关页面</div></td></tr>
+            </notempty>
+        </form>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+
+$(function(){
+	highlight_subnav("{:U('index')}");
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

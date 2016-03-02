@@ -1,0 +1,114 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.datatype{height:25px; line-height:25px; padding:15px; text-align:left;}
+.datatype a{ display:inline-block; height:23px; border:1px solid #dedede; line-height:23px; margin:0 10px; padding:0 20px; background:#f9f9f9;}
+.datatype a.on,.datatype a:hover{ background:#FEF7E7; text-decoration:none;color:#c00; border:1px solid #e4b057;}
+</style>
+
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/index')}">其他设置</a>><span>{$Type_Config[$type]}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">{$Type_Config[$type]}管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<a href="{:U('Links/add?type='.$type.'&status='.$status)}">添加新{$Type_Config[$type]}</a>
+            <input type="text" name="sokey" id="sokey" class="so_input w150 h20" value="{:I('sokey')}" placeholder="请输入搜索关键词">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}&type={$type}"/>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+            <tr class="listpage">
+                	<td colspan="8">
+                    	<div class="datatype">
+                        	<volist name='Status_Con' id='vo'><a href="{:U('index?status='.$key.'&type='.$type)}" class="type_{$key}">{$vo}</a></volist>
+                            <script type="text/javascript">$('.type_{$status}').addClass('on')</script>
+                        </div>
+                    </td>
+                </tr>
+			<tr>
+				<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th width="6%">ID</th>
+				<th width="10%">类别</th>
+				<th width="25%">{$Type_Config[$type]}标题</th>
+				<th width="20%">URL</th>
+				<th width="12%">排序</th>
+                <th width="12%">更新时间</th>
+				<th>操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Links/resort')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="list">
+                <tr>
+                    <td><input type="checkbox" class="select_id" name="check_id" value="{$list.id}"/></td>                    
+                    <td>{$list.id}</td>
+                    <td>{$list.status_text}</td>
+                    <td><div class="dataTitile">{$list.title}</div></td>
+                    <td><div class="dataTitile editstyle"><a href="{$list.url}" target="_blank">{$list.url}</a></div></td>
+                    <td><input type="text" name="sort_{$list.id}" value="{$list.sort}" class="reset_sort" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></td>
+                    <td>{$list.update_time|toDate='Y-m-d','FF0000'}</td>
+                    <td class="editstyle"><a href="{:U('edit?id='.$list['id'].'&type='.$type)}">编辑</a><if condition="$type neq 2 ">|<a class="confirm" href="{:U('del?id='.$list['id'].'&type='.$type)}">删除</a></if></td>
+                </tr>
+                </volist>
+                <if condition="$type neq 2 ">
+                <tr class="listpage">
+                	<td colspan="8">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l"><a href="{:U('Links/add?type='.$type.'&status='.$status)}" class="w100 h25">添加新链接</a><a href="javascript:sent_act('resort');" class="w100 h25">更改本页排序</a></div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                            <input type="hidden" name="type" id="type" value="{$type}"/>
+                        </div>
+                    </td>
+                </tr>
+                </if>
+            <else/>
+            	<tr><td colspan="8"><div class="no_data">暂无任何相关链接</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	highlight_subnav('{:U("index?type=".$type)}');
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

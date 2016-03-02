@@ -1,0 +1,142 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<script type="text/javascript" src="__COMMON__/widget/layer/layer.js"></script>
+<style type="text/css">
+.inMain{margin-top:50px;}
+.inLeft{width:460px;}
+.inMid{ width:350px; padding:0 40px; margin-left:20px; border-left:1px solid #e5e5e5;}
+.inRight{ width:260px;}
+.inMain h2{color:#0cb4ea; font-size:16px; font-weight:800; height:30px; line-height:30px;}
+.inMain h2 a{ float:right; display:inline-block; width:80px; text-align:center;color:#999; font-weight:normal; font-size:14px;}
+.inMain h2 a i{ padding:0 3px;}
+.newslist{margin-top:20px;}
+.minmap{ margin-top:20px;}
+
+.codetip{background:url(__IMG__/scan.png) no-repeat; width:122px; height:122px; cursor:pointer; margin-top:20px; position:relative;}
+.codebox{padding-top:20px; position:relative; width:240px;position:relative;top:122px;left:0;}
+.codeimg{width:240px; height:115px; padding:15px; background:#1ec354;}
+.codeimg .img{width:100px; height:115px;}
+.codeimg .img img{width:100px; height:115px;}
+.codeimg ul{ width:120px;}
+.codeimg li.head{ height:40px; line-height:40px; font-size:16px; font-weight:bold; background:none; text-indent:0;}
+.codeimg li{ height:25px; line-height:25px; background:url(__IMG__/codeico.png) no-repeat; text-indent:30px;color:#fff; cursor:pointer;}
+.codeimg li.on{color:#ffff00; font-weight:bold;}
+#showImg{cursor:pointer;}
+
+.slideBox{height:450px;}
+.slideBox .bd{height:450px;}
+.slideBox .bd li{height:450px;}
+.slideBox .bd li a{height:450px;}
+/*地图定位*/
+.mapimg{width:350px; height:280px; position:relative;}
+.mapimg a.map_link{display:block; text-indent:-99999px;position:absolute;}
+.mapimg a.mlink_13{width:44px; height:24px; top:170px; left:216px;}
+.mapimg a.mlink_14{width:38px; height:20px; top:150px; left:227px;}
+.mapimg a.mlink_16{width:27px; height:41px; top:189px; left:258px;}
+.mapimg a.mlink_15{width:45px; height:38px; top:216px; left:197px;}
+.mapimg a.mlink_17{width:25px; height:45px; top:105px; left:223px;}
+.mapimg a.mlink_18{width:73px; height:56px; top:161px; left:143px;}
+.maplabel{margin-top:5px;text-align:center;color:#999;height:30px; line-height:30px; overflow:hidden;}
+.maplabel a{cursor:pointer;margin:0 8px;color:#333;}
+.maplabel a:hover,.maplabel a.on{color:#f00;}
+
+
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>        
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="inMain clearfix">
+    	<div class="inLeft row_l">
+        	<h2><a href="__ROOT__/news" target="_blank">更多<i class="fa fa-angle-double-right"></i></a>中移信联资讯</h2>
+            <ul class="newslist">
+            	<volist name='News' id='vo'>
+            	<li><span>{$vo.create_time|toDate='Y.m.d'}</span><a href="__ROOT__/data/{$vo.id}.html" target="_blank" title="{$vo.title}">{$vo.title}</a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="inMid row_l">
+        	<h2>战略布局</h2>
+            <div class="minmap">
+            	<div class="mapimg">
+                <img src="__IMG__/map_default.png" border="0" id="Mapshow"/>
+                <volist name='shengfen' id='vo'><a href="__ROOT__/contact/lists_{$vo.id}.html" class="map_link mlink_{$vo.id}" title="{$vo.title_text}" data="{$vo.id}">{$vo.title_text}</a></volist>
+                </div>
+                <div class="maplabel"><volist name='shengfen' id='vo'>{$vo.tip}<a href="__ROOT__/contact/lists_{$vo.id}.html" class="map_png png{$vo.id}" data="{$vo.id}">{$vo.title_text}</a></volist></div>
+            </div>
+        </div>
+        <div class="inRight row_r">
+        	<h2>中移信联</h2>
+                <div class="codetip">
+                	<div class="codebox">
+                    <div class="codeimg hide clearfix">
+                    <div class="img row_l"><img src="__IMG__/code_1.png" id="showImg" /></div>
+                    <ul class="row_r">
+                        <li class="head">关注我们</li>
+                        <li class="wxtitle on" data="code_1">中移信联</li>
+                        <li class="wxtitle" data="code_2">先行者微刊</li>
+                        <li class="wxtitle" data="code_3">联信展翼</li>
+                    </ul>
+                </div>
+                	</div>
+                </div>          
+        </div>
+    </div>
+</div>
+
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	$(".codetip").hover(function(){	
+		$('.codeimg').fadeIn();
+	},function(){
+		$('.codeimg').fadeOut();
+	});
+	
+	$(".wxtitle").mouseover(function(){
+		$('.wxtitle').removeClass('on');
+		$(this).addClass('on');	
+		var data = $(this).attr('data');
+		$('#showImg').attr('src','__IMG__/'+data+'.png');
+	});
+	
+	$(".map_png").mouseover(function(){		
+        var data = $(this).attr('data');
+		showmaps(data);
+    });
+	$(".map_link").mouseover(function(){		
+        var data = $(this).attr('data');
+		showmaps(data);
+    });	
+	
+})
+function showmaps(ids){
+	$('.map_png').removeClass('on');
+	$('.png'+ids).addClass('on');
+	$('#Mapshow').attr('src','__IMG__/map_'+ids+'.png');
+}
+showmaps(13);
+</script>
+
+</block>

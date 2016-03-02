@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/Public/Common/script/jquery-1.11.1.min.js"></script>
+<title>系统提示</title>
+<style type="text/css">
+*{padding: 0; margin: 0;}
+div{padding: 4px 48px;}
+body{background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px}
+h1{font-size:100px;font-weight:normal;margin-bottom: 12px; }
+p.context{line-height:1.8em;font-size:30px;}
+p.backurl{line-height:1.8em;font-size:16px;margin-top:20px;}
+p.backurl span{ margin:0 3px;color:#008000;}
+p.backurl a{margin:0 3px;color:#00f;}
+</style>
+</head>
+<body>
+<div style="padding: 24px 48px;">
+	<h1>:(</h1>
+	<p class="context">很抱歉，您访问的页面不存在！</p>
+	<p class="backurl">系统将在<span id="second">5</span>秒后自动跳转；如果不想等待，请直接<a href="javascript:vod(0);" id="gooTip">点击这里</a>跳转</p>
+</div>
+<script type="text/javascript">
+	var second  = '5';
+	var backurl = '/';
+	$(function(){
+		countdown(second);
+		$('#closeTip,#gooTip').click(function(){
+			gourl(backurl);
+		})
+	})
+	function gourl(urls){
+		window.location.href = urls;
+	}
+	function countdown(second){
+		var seconds = parseInt(second);
+		if(seconds < 1){
+			gourl(backurl);
+			return false;
+		}else{
+			$('#second').html(seconds);
+			seconds--;
+			setTimeout(function(){countdown(seconds)},1000);
+		}
+	}
+</script>
+</body>
+</html>

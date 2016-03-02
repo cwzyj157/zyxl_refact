@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import url('global.css');
+a:hover img{opacity:0.8;filter:alpha(opacity=80);}
+.warp1200{width:1200px;margin:0 auto;zoom:1;}
+.mtop10{margin-top:10px;}.mtop15{margin-top:15px;}.mtop20{margin-top:20px;}.mtop40{margin-top:40px;}
+.ptop10{padding-top:10px;}.ptop15{padding-top:15px;}.ptop20{padding-top:20px;}.ptop40{margin-top:40px;}
+.radius5{overflow:hidden;border-radius:5px;}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.boxshadow{-webkit-box-shadow: rgba(0, 0, 0, .1) 0 1px 5px;-moz-box-shadow: rgba(0, 0, 0, .1) 0 1px 5px;box-shadow: rgba(0, 0, 0, .1) 0 1px 5px;}
+/**/
+.header{height:100%; height:100px; border-bottom:1px solid #e6e6e6;}
+.header .logo{ width:240px; height:100px;}
+.header .logo a{display:block;width:240px;height:100px;background:url(../images/logo.png) no-repeat;text-indent:-999999px;}
+.header .favorite{width:200px; height:30px; line-height:30px; margin-top:20px; text-align:right;color:#999;}
+.header .favorite a{ margin:0 8px;color:#666;}
+.banner{}
+.banner ul{ z-index:0;}
+.banner ul li{float:left; width:170px; height:50px;border-left:1px solid #e5e5e5;position:relative;}
+.banner ul li.shop{ border-right:1px solid #e5e5e5;}
+.banner ul li a.nav_0{display:block; width:170px; height:50px; line-height:50px; text-align:center; font-size:16px;color:#0cb4ea;}
+
+.childmenu{width:450px;z-index:1;left:-150px;top:38px;padding-top:12px;position:absolute;display:none;height:35px;line-height:35px; background:url(../images/navico.png) 223px 0 no-repeat;}
+.childmenu .nav_l{background:url(../images/banimg_f.png) top left no-repeat;height:35px;}
+.childmenu .nav_r{background:url(../images/banimg_r.png) top right no-repeat;height:35px; padding:0 25px}
+.childmenu .nav_mid{height:35px; line-height:35px; padding:0 10px;color:#fff; background:#fff; text-align:center;}
+.childmenu .nav_mid a{color:#0cb4ea; font-size:14px; margin:0 8px;}
+.childmenu .nav_mid a:hover{color:#f00;}
+.childmenu.rencai{ width:230px; left:-29px;}
+
+/*slideBox*/
+.slideBox{width:100%;height:225px; position:relative;}
+.slideBox .hd{position:absolute;bottom:15px;left:0;z-index:1;text-align:center;width:100%;height:18px; line-height:18px;}
+.slideBox .hd span{display:inline-block;width:12px;height:12px; line-height:18px; background:#fff;border-radius:100%;text-indent:-99999px; margin:0 8px; cursor:pointer;}
+.slideBox .hd span.on{ background:#c00;}
+.slideBox .bd{ width:100%;height:225px;overflow:hidden;z-index:0;}
+.slideBox .bd li{ width:100%; height:225px;}
+.slideBox .bd li a{ display:block; width:100%; height:225px; text-indent:-999999px;}
+
+.newslist li{height:40px; line-height:40px; border-bottom:1px dashed #e5e5e5;background:url(../images/t_ico.png) 10px 16px no-repeat; text-indent:30px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.newslist li a{ font-size:14px;}
+.newslist li span{ float:right;display:inline-block; width:120px; text-align:center;color:#999; font-weight:normal; text-indent:0; font-size:12px;}
+
+.mainBox{ background:url(../images/leftbg.png) repeat-y;}
+
+.leftBox{ width:260px; padding:1px;}
+.rightBox{ width:840px; min-height:500px; _heigh:500px;}
+.classname{padding:30px; height:50px;border-bottom:1px solid #dedede;}
+.classname p{ height:25px; line-height:25px; font-size:18px;color:#666;}
+
+/*footer*/
+.footer{background:#d8d8d8;width:100%; height:50px; padding:20px 0;}
+.copyright{ width:1000px;}
+.copyright p{color:#999; height:25px; line-height:25px; text-align:right;}
+.copyright p.icp span,.copyright p a{ margin:0 10px;color:#666}
+
+.leftmenu{}
+.leftmenu li{height:50px; line-height:50px; text-align:center; border-bottom:1px solid #dedede;}
+.leftmenu li a{ font-size:16px;}
+.leftmenu li.on{ background:#fcca4f;color:#fff; font-weight:bold;}
+.leftmenu li.on a{color:#fff;}
+
+.leftmenu li.min{background:#f9efd5; font-weight:normal; font-size:14px;}
+.leftmenu li.min a{ font-size:14px;color:#666}
+.leftmenu li.min.on a{color:#b00000;}
+.leftmenu li.rencaichengzhang{cursor:pointer;}
+
+.sitemap{ height:25px; line-height:25px; padding:30px 0; font-size:14px;}
+.sitemap a{ margin:0 10px;}
+.sitemap span{ margin:0 10px;color:#036;}
+.pagetitle{ font-size:18px; color:#0cb4ea; height:20px; line-height:20px;}
+
+.contentBox { min-height:350px; _height:350px; padding:30px; margin-top:10px;}
+.contentBox p,.contentBox div{ line-height:30px; font-size:14px;}
+.contentBox p img,.contentBox div img{max-width:800px;}
+
+
+
+.pageRight h1{ height:30px; line-height:30px; font-size:22px;color:#c00;}
+
+.datebox{ width:80px; height:100px; background:#327ad3; border:1px solid #327ad3;position:absolute; top:20px;left:20px; padding:5px;}
+.datebox .day{ height:55px; line-height:55px; text-align:center;color:#fff; font-size:45px;}
+.datebox .mon{ margin-top:10px; border-top:1px solid #d8d8d8; text-align:center; height:30px; line-height:30px;color:#fff; font-size:14px;}
+.news_list li{height:112px;padding-left:140px; position:relative; margin-top:20px; border-top:1px solid #dedede; padding-top:20px;}
+.news_list li .d_list{}
+.news_list li .d_list .title{height:32px; line-height:32px; font-size:20px;}
+.news_list li .d_list .text{ height:40px; line-height:20px; font-size:12px;overflow:hidden; margin-top:8px;color:#666;}
+.news_list li .d_list .more{ width:60px; height:22px; margin-top:10px;}
+.news_list li .d_list .more a{ display:block; width:60px; height:20px; line-height:20px;color:#666; border:1px solid #c9c9c9; text-align:center;}
+
+.con_page{ height:30px; line-height:30px; padding:40px 0;}
+.con_page p{ width:380px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.con_page p.row_l{ text-align:left;}
+.con_page p.row_r{ text-align:right;}
+/*articleBox*/
+.articleBox{}
+.articleBox .contitle{ line-height:40px; font-size:26px;color:#000; text-align:center; padding:10px 100px;}
+.articleBox .infos{ width:100%;border-bottom:1px solid #dedede;margin-top:10px;padding-bottom:10px;}
+.articleBox .infos .date{width:400px;height:24px; line-height:24px; font-size:14px;color:#666; text-indent:35px; text-align:right; padding-right:10px;}
+.articleBox .infos .date i{ padding:0 10px;}
+.articleBox .infos .cate{width:400px;text-align:right; height:24px; line-height:24px; font-size:14px;color:#666; text-indent:35px;}
+.articleBox .infos .cate a{color:#000;font-size:16px;}
+.smallpic{padding:20px 0; text-align:center;}
+.articleBox .content{ min-height:350px; _height:350px;}
+.articleBox .content p,.articleBox .content div{ line-height:30px; font-size:16px;}
+.articleBox .content p img,.articleBox .content div img{max-width:780px;}

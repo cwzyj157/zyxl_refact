@@ -1,0 +1,95 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.txt_main{width:90%;border:1px solid #6b8eb9;height:360px;}
+.RomNumber{width:100%;overflow:hidden;background-color:#005bc0;border-right:0px;text-align:right;font-weight:bold;color:#fff;cursor:default; padding-right:5px; height:360px;}
+.fromTable td .Number td{padding:8px 2px;border:none;margin:5px; text-align:left;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/index')}">其他设置</a>><a href="{:U('index?type='.$type)}">{$Type_Config[$type]}管理</a>><span>添加{$Type_Config[$type]}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}">{$Type_Config[$type]}</a><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">{$Type_Config[$type]}文件路径：</td>
+				<td class="inp"><input type="text" name="true_path" id="true_path" class="f_input w400 readonly" readonly="readonly" value="{$true_path|default=''}" /><span class="f_tip" id="tip_true_path">( * 不能更改 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">{$Type_Config[$type]}文件名：</td>
+				<td class="inp"><input type="text" name="file_name" id="file_name" class="f_input w400 {:isset($file_name)?'readonly':''}" {:isset($file_name)?'readonly="readonly"':''} value="{$file_name|default=''}"/><span class="f_tip" id="tip_file_name">( * 模版文件名 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">{$Type_Config[$type]}详细内容：</td>
+				<td class="inp">{$TemplateEdit}</td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="type" name="type" value="{$info.type|default = $type}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	$(function(){
+		$('#file_name').blur(function(){
+			var file_name = $('#file_name').val();
+			if(!check_filename(file_name)){
+				form_inputMsg('file_name','文件名只能有数字或字母组成,请重新输入','error');		
+			}
+		});
+	});	
+
+	function check_from(){
+		var true_path = $('#true_path').val();
+		var file_name = $('#file_name').val();
+		if (true_path == ''){
+			form_inputMsg('true_path','文件保存路径不能为空,请输入标题','error');
+			return false;
+		}
+		if (file_name == ''){
+			form_inputMsg('file_name','文件名不能为空','error');
+			return false;
+		}
+		if(!check_filename(file_name)){
+			form_inputMsg('file_name','文件名只能有数字或字母组成,请重新输入','error');
+			return false;		
+		}
+	}
+	
+	function check_filename(chkname){
+		var patrn = /^([a-z0-9]|[._])+$/; //只能有小写字母和数字和. 组成
+		if (patrn.exec(chkname)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	highlight_subnav('{:U('index?type='.$type)}');
+	//模版编辑框换符
+	function show_ln(txt_ln,txt_main){
+		var txt_ln  = document.getElementById(txt_ln);
+		var txt_main  = document.getElementById(txt_main);
+		txt_ln.scrollTop = txt_main.scrollTop;
+		while(txt_ln.scrollTop != txt_main.scrollTop){
+		txt_ln.value += (i++) + '\n';
+		txt_ln.scrollTop = txt_main.scrollTop;
+    }
+return;
+}
+</script>
+</block>

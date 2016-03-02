@@ -1,0 +1,182 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Data/index')}">内容管理</a>><present name='data'><a href="{:U('Data/index?cateid='.$data['id'])}">{$data.title}</a>></present><span>{$page_tip.page_name}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form class="koo_fromBox" name="form1" id="form1" action="{:U()}" method="post">
+		<table>
+			<tr>
+				<td width="20%" class="msg">{$Models.smp_name}参数：</td>
+				<td class="inp">
+                <select name="cateid" id="cateid" class="f_select">
+                <option value="0">== 选择栏目 ==</option>
+                <volist name="classMap" id="Maps">            
+                    <if condition="$Models['id'] gt 0">
+                        <if condition="$Maps['model'] == $Models['id']">
+                            <option value="{$Maps.id}">{$Maps.title_show}</option>
+                        </if>
+                    <else />
+                        <option value="{$Maps.id}">{$Maps.title_show}</option>
+                    </if>			
+                </volist>
+                </select>
+                <label for="label_c" class="f_label" style="margin-left:20px;"><input type="checkbox" {$info.label|checkstatus='c'} name="label[]" id="label_c" value="c">首页显示[c]</label>
+                <label for="label_j" class="f_label"><input type="checkbox" {$info.label|checkstatus='j'} name="label[]" id="label_j" value="j" onclick="ShowUrlTr()">跳转[j]</label>
+                </td>
+			</tr>
+            <tr <?php if (!checkstatus($info['label'],'j')){echo 'style="display:none"';}?>id="returnurl">
+            	<td class="msg">跳转地址:</td>
+                <td class="inp"><input type="text" name="goourl" id="goourl" class="f_input w500" value="{$info.goourl|default=''}" placeholder="http://"/><span class="f_tip" id="tip_title">( * 跳转地址 url格式 )</span></td>
+            </tr>
+			<tr>
+				<td class="msg">{$Models.smp_name}标题：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w500" value="{$info.title|default=''}" datatype="*2-200" /><span class="Validform_checktip"></span></td>
+			</tr>
+            <if condition='$cateid eq 12'>
+            <tr>
+				<td class="msg">成员职位：</td>
+				<td class="inp"><input type="text" name="shorttitle" id="shorttitle" class="f_input w500" value="{$info.shorttitle|default=''}" /><span class="Validform_checktip"></span></td>
+			</tr>
+            </if>
+            <tr>
+				<td class="msg">更新时间：</td>
+				<td class="inp"><input type="text" name="create_time_text" id="create_time_text" class="f_input w200 laydate-icon" value="{$info.create_time_text|default=$create_time_text}"/><span class="Validform_checktip"></span></td>
+			</tr>		
+            <tr>
+				<td class="msg">{$Models.smp_name}简介：</td>
+				<td class="inp upLoad"><textarea name="Introduction" id="Introduction" class="f_textarea" style="width:600px;height:50px; line-height:16px">{$info.Introduction|default = ''}</textarea></td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">SEO关键词：</td>
+				<td class="inp"><input type="text" name="keywords" id="keywords" class="f_input w500" value="{$info.keywords|default=''}" /><span class="f_tip">( * 页面SEO关键词 )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO内容描述：</td>
+				<td class="inp"><textarea name="description" id="description" class="f_textarea" style="width:500px;height:80px;">{$info.description|default = ''}</textarea></td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">{$Models.smp_name}缩微图：</td>
+				<td class="inp"><input type="text" name="smallpic" id="smallpic" class="f_input w250" value="{$info.smallpic|default=''}"/>{$UploadPic_admin}</td>
+			</tr>        
+            <!--扩展数据表内容-->
+            <tr>
+				<td class="msg">{$Models.smp_name}详细内容：</td>
+				<td class="inp u_editor">{$content_editor}</td>
+			</tr>
+            <!--扩展数据表内容-->
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="dataid" name="dataid" value="{$info.id|default = 0}" /><input type="hidden"id="articleid" name="articleid" value="{$extend.articleid|default = 0}" /><input type="hidden" id="relates" name="relates" value="{$info.relates|default=''}"/><input type="hidden" id="modelid" name="modelid" value="{$Models.id|default = 0}" /><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<link rel="stylesheet" type="text/css" href="__COMMON__/widget/layer/skin/layer.css"/>
+<script type="text/javascript" src="__COMMON__/widget/layer/layer.js"></script>
+<script type="text/javascript" src="__COMMON__/widget/laydate/laydate.js"></script>
+<script type="text/javascript" src="__JS__/loaddata.js"></script>
+<script type="text/javascript">
+var cateid = parseInt("{$info.cateid|default = $cateid}");
+var id = parseInt("{$info.id|default=0}");
+var ispush = 1;
+</script>
+<script type="text/javascript">
+	$(function(){
+		//日期插件配置
+		laydate({
+			elem: '#create_time_text', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+			event: 'focus', //响应事件。如果没有传入event，则按照默认的click
+			format: 'YYYY-MM-DD hh:mm:ss',
+			istime: true,
+		});
+		$(".koo_fromBox").Validform({
+			tiptype:4,
+			postonce:true,
+			beforeSubmit:function(curform){
+				var cateid = $('#cateid').val();
+				if (cateid == 0){
+					alert('请选择栏目类别');
+					return false;	
+				}
+			},
+		});
+		//选择相关文档
+		$("#selectMore").bind("click",function(){
+			var api_layer = '<div class="newsbox">\
+				<div class="sonews">\
+					<input type="text" name="newskey" id="newskey" class="newskey" placeholder="输入标题关键词查找">\
+					<select name="socateid" id="socateid" class="socateid">\
+					<option value="0">所有分类</option>\
+					<volist name="classMap" id="Maps">
+					<option value="{$Maps.id}">{$Maps.title_show}</option>\
+                	</volist>
+					</select>\
+					<input type="button" name="sobtn" id="sobtn" class="sobtn" value="搜索文档" onclick="sodata()" />\
+				</div>\
+				<div id="so_result" class="so_result"></div>\
+			</div>';
+			showlayer('选择相关内容',api_layer,640);
+			load_data(id,cateid,'',1,ispush);
+		});
+		//选择Tags
+		$("#selectTag").bind("click",function(){			
+			var tag_layer = '<div class="tagsbox">';
+			tag_layer += '<ul class="clearfix">';
+			<volist name="tags" id="taglist">
+			tag_layer += '<li data="{$taglist.tagname}" onclick="selectTag(this,{$taglist.id},\'{$taglist.tagname}\')">{$taglist.tagname}</li>';
+			</volist>
+			tag_layer += '</ul>';
+			tag_layer += '<div class="nowchoose">【当前已选】<span id="choosetag"></span></div>';
+			tag_layer += '</div>';	
+			showlayer('选择Tags',tag_layer,640);
+			loadchecked();			
+		});
+		
+	});
+	Think.setValue("cateid",cateid);
+	//Think.setValue("titletype","{$info.titletype|default=0}");
+	//左侧高亮
+	var sType   = {$Think.config.CATEGORY_SHOWTYPE};
+	var sCuttle = {$Think.config.CATEGORY_MENU_CUTTLE};
+	var cateid  = {$cateid|default=0};
+	if (sType){
+		//左侧菜单是否折叠
+		if (sCuttle){
+			$('.menu_nav').hide();
+			if (!cateid){
+				$('.menu_tab').children('.menu_nav').eq(0).show();
+			}else{
+				$('.cate_'+cateid).parent('ul').show();
+			}
+			$('.cate_{$pid}').parent('ul').show();
+			//关闭或者打开Menu
+			$('.menu_tab h2').click(function (){
+				$('.menu_tab ul').slideUp(150);
+				submenu = $(this).parent().find('ul');
+				if (submenu.is(':visible'))
+					submenu.slideUp(150);	
+				else
+					submenu.slideDown(200);	
+			});
+		}
+		highlight_subnav('{:U('index?cateid='.$cateid)}');
+		highlight_subnav('{:U('index?cateid='.$pid)}');
+	}else{
+		highlight_subnav('{:U('index?model='.$Models['id'])}');
+	}
+		
+</script>
+</block>

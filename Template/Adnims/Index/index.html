@@ -1,0 +1,56 @@
+<extend name="Common/basepage"/>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index')}">管理首页</a>><span>系统环境检测</span></block>
+<block name="pagelink">
+	<div class="pageUrl">
+		<a href="{:U(ACTION_NAME)}" class="cur">系统环境检测</a>
+	</div>
+
+</block>
+<block name="style">
+<style text="text/css">
+.ico-success,.ico-error{vertical-align: -1px;margin-right:10px;display: inline-block;width: 16px;height: 16px;line-height: 9;overflow: hidden;}
+.ico-success{background:url(/Public/admin/img/ok.png) no-repeat;}
+.ico-error{background:url(/Public/admin/img/error.png) no-repeat;}
+</style>
+</block>
+<block name="script"></block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>		
+				<th width="25%">项目</th>
+                <th width="25%">所需配置</th>
+                <th>当前配置</th>
+			</tr>
+			</thead>
+			<tbody>               
+				<volist name="env" id="item">
+					<tr>
+						<td>{$item[0]}</td>
+						<td>{$item[1]}</td>
+						<td><i class="ico-{$item[4]}">&nbsp;</i>{$item[3]}</td>       
+					</tr>
+				</volist>				
+			</tbody>
+		</table>
+		<table style="margin-top:10px;">
+			<thead>
+			<tr>		
+				<th width="25%">目录/文件</th>
+                <th width="25%">所需状态</th>
+                <th>当前状态</th>
+			</tr>
+			</thead>
+			<tbody>               
+				<volist name="dirfile" id="item">
+                <tr>
+                    <td>{$item[3]}</td>
+                    <td>可写</td>
+                    <td><i class="ico-{$item[2]}">&nbsp;</i>{$item[1]}</td>   
+                </tr>
+            </volist>				
+			</tbody>
+		</table>
+    </div>
+</block>

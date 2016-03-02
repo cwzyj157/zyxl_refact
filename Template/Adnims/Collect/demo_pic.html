@@ -1,0 +1,79 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<script type="text/javascript" src="/Public/admin/js/ZeroClipboard.js"></script>
+<style type="text/css">
+.colldemo a{color:#c00;}
+.colldemo a,.colldemo span{ margin:0 5px;}
+.demotext{margin-left:0px;padding-left:0px;color:#00f;float:left;}
+.demoPics{padding:5px 15px 15px 5px;}
+.demoPics li{float:left; margin-top:10px; margin-left:10px; width:160px; height:120px; border:1px solid #dedede; padding:1px;}
+.demoPics li img{width:160px; height:120px;}
+.demoPicurl li {float:left; width:230px; text-indent:10px; height:25px; line-height:25px; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Collect/index')}">内容采集</a>><span>采集小助手</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">内容采集结果</a></div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U('collsingle')}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">目标站：</td>
+				<td class="inp colldemo"><span>{$collect_type.title}</span>><a href="{$collect_type.url}" target="_blank">{$collect_type.url}</a>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">目标内容页地址：</td>
+				<td class="inp"><a href="{$collurl}" target="_blank"><u>{$collurl}</u></a></td>
+			</tr>
+            <tr>
+            	<td height="10" style="height:10px; line-height:10px;" colspan="2"></td>
+            </tr>
+            <tr>
+				<td class="msg">内容标题：</td>
+				<td class="inp colldemo">
+                <span id="demotitle" class="demotext" style="">{$coll_result.title}</span><span style="margin-left:8px; margin-top:8px;" class="ZeroClip" id="copyTitle">复制</span>
+				</td>
+			</tr>
+            <tr>
+				<td class="msg">标签：</td>
+				<td class="inp colldemo">
+                <span id="demotag" class="demotext" style="">{$coll_result.tags}</span>
+				</td>
+			</tr>
+            <tr>
+				<td class="msg">大图片预览：</td>
+				<td class="inp">
+                	<ul class="demoPics clearfix">
+                    	<volist name="coll_result['picurl']" id="pics">
+                    	<li><a href="{$pics}" target="_blank"><img src="{$pics}" /></a></li>
+                        </volist>
+                    </ul>
+				</td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><a href="{:U('collect/onepage')}" class="w100 h30">返回小助手</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	copySpan('demotitle','copyTitle');
+	function check_from(){
+		var collurl = $('#collurl').val();
+		if (collurl == ''){
+			form_inputMsg('collurl','请输入采集目标站内容页地址','error');
+			return false;
+		}
+	}
+	highlight_subnav('{:U('collect/onepage')}');
+</script>
+</block>

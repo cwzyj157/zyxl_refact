@@ -1,0 +1,108 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.total_info{text-align:center; padding-left:25px;}
+.total_info .paging a{ margin:0 8px; padding:0 8px;}
+.setting{}
+.ggview{ padding:30px;}
+.ggview h2{height:40px; line-height:40px; font-size:16px;}
+.ggview .box{padding:20px 0;}
+.beizhu{float:left; width:100%; height:20px; line-height:20px;color:#008000; padding-bottom:5px; display:none;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>{$meta_title}管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form"></div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" class="koo_fromBox">
+		<table>
+            <tr>
+				<td class="msg" width="20%">选择广告位类型：</td>
+				<td class="inp" width="80%">
+                	<select name="status" id="status" class="f_select" onchange="showbeizhutext()">
+                    	<option value="0">图片广告位</option>
+                    	<option value="1">Flash广告位</option>
+                        <option value="2">Html代码</option>
+                        <option value="3">文字广告位</option>
+                    </select>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">广告位名称：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w400" value="{$info.title|default=''}" datatype="*3-50"/><span class="Validform_checktip"><font color="#ff0000"> * </font>请输入广告位名称</span></td>
+			</tr>
+            <tr>
+				<td class="msg">广告位尺(宽度)：</td>
+				<td class="inp"><input type="text" name="width" id="width" class="f_input w100" value="{$info.width|default=0}" datatype="n1-4" ><span class="Validform_checktip">（页面设计预留广告位尺寸）</span></td>
+			</tr>
+            <tr>
+				<td class="msg">广告位尺(高度)：</td>
+				<td class="inp"><input type="text" name="height" id="height" class="f_input w100" value="{$info.height|default=0}" datatype="n1-4" ></td>
+			</tr>
+            <tr>
+				<td class="msg">广告链接地址：</td>
+				<td class="inp"><input type="text" name="url" id="url" class="f_input w400" value="{$info.url|default=''}" datatype="url"/><span class="Validform_checktip"><font color="#ff0000"> * </font>请输入广告链接地址</span></td>
+			</tr>
+            <tr>
+				<td class="msg">广告素材：</td>
+				<td class="inp"><input type="text" name="source" id="source" class="f_input w300" value="{$info.source|default=''}"/>{$UploadPic_admin}<span class="f_tip" id="tip_source">(图片或者Flash)</span></td>
+			</tr>
+            <tr>
+				<td class="msg">广告位描述：</td>
+				<td class="inp">
+                <textarea name="content" id="content" class="f_textarea" style="width:500px;height:60px; padding:5px;line-height:20px">{$info.content|default = ''}</textarea>
+                <div class="beizhu" id="beizhutext"></div>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <input type="hidden" id="id" name="id" value="{$info.id|default = 0}" />
+                        <input type="submit" name="submit" id="submit" class="btn w100 h30" value="提交表单" />
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>
+    <notempty name='info'>
+    <div class="ggview">
+        <h2>广告位预览：</h2>
+        <div class="box"><script type="text/javascript" src="/Ajax/Code/ids/{$info.id}.html"></script></div>
+    </div>
+    </notempty>
+</block>
+<block name="script">
+<script type="text/javascript">
+	Think.setValue("status","{$info.status|default=0}");
+	showbeizhutext();
+	$(function(){
+		$(".koo_fromBox").Validform({
+			tiptype:4,
+		});
+	});
+	highlight_subnav("{:U('index')}");
+	function showbeizhutext(){
+		var status = $('#status').val();
+		if(status == 0){
+			$('#beizhutext').html('广告位备注说明').show();
+		}else if(status == 1){
+			$('#beizhutext').html('广告位备注说明').show();
+		}else if(status == 2){
+			$('#beizhutext').html('请输入广告HTMl代码').show();
+		}else if(status == 3){
+			$('#beizhutext').html('文字广告位模版：广告词@文字颜色@文字大小@是否加粗[0/1]；<font color="#FF0000">广告语@FF0000@16@1</font>').show();
+		}else{
+			$('#beizhutext').html('').hide();
+		}
+	
+	}
+</script>
+</block>

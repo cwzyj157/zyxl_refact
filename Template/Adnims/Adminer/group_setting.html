@@ -1,0 +1,94 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.RluesBox{ padding-right:10px; padding-bottom:10px;}
+.quanxianList{border:1px solid #ddd; margin-top:10px; background-color:#fff;}
+.quanxianList .B_memu{height:30px; line-height:30px;background-color:#f9f9f9;text-indent:10px; }
+.quanxianList .B_memu label{cursor:pointer;font-size:14px; font-weight:bold;}
+.quanxianList .B_memu label input,.quanxianList .M_menu li input,.quanxianList .M_class label input{ margin:0 5px;}
+.quanxianList .M_class{height:30px; line-height:30px;text-indent:20px; background-color:#f1faff; margin-top:3px;}
+.quanxianList .M_class label{cursor:pointer;color:#03C;}
+.quanxianList .M_menu{padding:10px;}
+.quanxianList .M_menu ul{padding-left:20px;}
+.quanxianList .M_menu li{float:left;display:inline;width:160px;height:30px;line-height:30px;padding-left:20px;}	
+.selectall{display:block; width:70px; height:30px; line-height:30px; text-align:center;color:#fff; background-color:#27324d;cursor:pointer; float:right; text-indent:0px; padding-left:0px;}
+.selectbll{display:block; width:70px; height:30px; line-height:30px; text-align:center;color:#333; background-color:#cedcff;cursor:pointer; float:right; text-indent:0px; padding-left:0px;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">系统设置</a>><a href="{:U('AdminGroup/index')}">权限组管理</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('AdminGroup/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post">
+		<table>
+			<tr>
+				<td class="inp">
+                <div class="RluesBox">
+                    <volist name="rules" id="tRs">
+                        <div class="quanxianList" id="firstLevel{$tRs.id}">
+                        	<div class="B_memu"><span class="selectall" id="S_tCheck_{$tRs.id}" onclick="firstCheck({$tRs.id})">全部选中</span><label for="topLevel{$tRs.id}"><input type="checkbox" name="uRules[]" id="topLevel{$tRs.id}" value="{$tRs.id}" {$tRs.checked}>{$tRs.title}</label></div>
+                        	<div class="M_menu">{$tRs.childmenu}</div>
+                        </div>
+                    </volist>
+                </div>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td>
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="id" name="id" value="{$groupp.id|default='0'}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	//左侧高亮
+	highlight_subnav('{:U('index')}');
+});
+function firstCheck(num){
+	if ($("#topLevel"+num).attr("checked")){
+		$("#topLevel"+num).attr("checked",false);
+		$('#S_tCheck_'+num).html('全部选中');
+	}else{
+		$("#topLevel"+num).attr("checked",true);
+		$('#S_tCheck_'+num).html('全部取消');
+	}
+	if ($("#topLevel"+num).attr("checked")){  
+        $('#firstLevel' + num + ' input:checkbox').attr("checked", true);  
+    } else {  
+        $('#firstLevel' + num + ' input:checkbox').attr("checked", false);  
+    }
+}
+
+function secondCheck(num){
+    //获取二级菜单下的所有dd标签下的input表单
+	// 反选效果
+    //$('#secondLevel' + num + ' input:checkbox').each(function(){
+    //    this.checked = !this.checked;
+    //});
+	if ($("#Smenu_"+num).attr("checked")){
+		$("#Smenu_"+num).attr("checked",false);
+		$('#S_sCheck_'+num).html('全部选中');
+	}else{
+		$("#Smenu_"+num).attr("checked",true);
+		$('#S_sCheck_'+num).html('全部取消');
+	}
+	if ($("#Smenu_"+num).attr("checked")){
+        $('#secondLevel' + num + ' input:checkbox').attr("checked", true);  
+    } else {  
+        $('#secondLevel' + num + ' input:checkbox').attr("checked", false);  
+    }
+}
+</script>
+</block>

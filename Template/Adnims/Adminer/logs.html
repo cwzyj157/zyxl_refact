@@ -1,0 +1,57 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><a href="{:U('Config/group')}">系统设置</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Adminer/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<!--div class="row_r so_Form">
+            <input type="text" name="sokey" id="sokey" class="so_input w200 h20" value="{:I('sokey')}" placeholder="">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}"/>
+        </div-->
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="10%">日志ID</th>
+				<th>日志明细</th>
+                <th width="20%">操作员帐号</th>
+				<th width="20%">操作时间</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Adminer/index')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="data">
+                <tr>
+                    <td>{$data.id}</td>
+                    <td><div style="text-align:left;text-indent:10px;">{$data.logtext}</div></td>
+                    <td>{$data.adminid_text}</td>
+                    <td>{$data.log_time|toDate="Y-m-d H:i:s"}</td>
+                </tr>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="8">
+                    	<div class="action_page clearfix">
+                            <div class="page_no row_r">{$_page}</div>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="4"><div class="no_data">暂无任何日志</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	//左侧高亮
+	highlight_subnav('{:U("logs")}');
+});
+</script>
+</block>

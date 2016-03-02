@@ -1,0 +1,55 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/index')}">其他设置</a>><span>招聘信息管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">招聘信息管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{:U('add')}">添加新招聘信息</a>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">招聘岗位：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w500" value="{$info.title|default=''}" /><span class="f_tip" id="tip_title">( * 招聘岗位 )</span></td>
+			</tr>
+			<tr>
+				<td class="msg">岗位职责：</td>
+				<td class="inp upLoad"><textarea name="zhize" id="zhize" class="f_textarea" style="width:500px;height:120px; line-height:16px">{$info.zhize|default = ''}</textarea></td>
+			</tr>
+			<tr>
+				<td class="msg">岗位要求：</td>
+				<td class="inp upLoad"><textarea name="yaoqiu" id="yaoqiu" class="f_textarea" style="width:500px;height:120px; line-height:16px">{$info.yaoqiu|default = ''}</textarea></td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" name="sort" id="sort" class="f_input w60" value="{$info.sort|default='1'}" /><input type="hidden" id="id" name="id" value="{$info.id|default =0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var title = $('#title').val();
+		var url = $('#url').val();
+		if (title == ''){
+			form_inputMsg('title','标题不能为空,请输入标题','error');
+			return false;
+		}
+		//if (url == ''){
+		//	form_inputMsg('url','URL链接地址不能为空','error');
+		//	return false;
+		//}
+	}
+	highlight_subnav("{:U('index')}");
+</script>
+</block>

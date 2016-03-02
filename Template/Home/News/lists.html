@@ -1,0 +1,76 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<style type="text/css">
+.leftmenu li.min{ display:none;}
+
+.recruitBox{margin-top:20px;}
+.recruitBox h2{color:#e76902; font-size:18px; height:40px; line-height:40px; font-weight:bold; background:#f0f0f0; text-indent:20px;}
+.recruitBox .title{color:#5c4942; font-size:16px; height:30px; line-height:30px; font-weight:bold; text-indent:20px; margin-top:10px;}
+.recruitBox .con{ padding:10px 40px; font-size:14px; line-height:25px;}
+
+.Newlists{ margin-top:40px; padding-bottom:40px;}
+
+
+
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>       
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="mainBox clearfix">
+    	<div class="leftBox row_l">
+        	<div class="classname">
+            	<p class="en">News Information</p><p class="cn">新闻动态</p>
+            </div>
+            <include file='Common/leftmenu' type="news"/>
+        </div>
+        <div class="rightBox row_r">
+        	<div class="sitemap">您现在的位置：<a href="__ROOT__/">首页</a>><a href="__ROOT__/news">新闻动态</a>><span>{$Catename}</span></div>
+        	<div class="pagetitle">{$Catename}</div>
+            <div class="Newlists">
+                <notempty name='lists'>
+                <ul class="news_list">            
+                    <volist name='lists' id='vo'>
+                    <li>
+                        <div class="datebox">
+                            <div class="day">{$vo.create_time|toDate='d'}</div>
+                            <div class="mon">{$vo.create_time|toDate='Y-m'}</div>
+                        </div>
+                        <div class="d_list">
+                            <div class="title ellipsis"><a href="__ROOT__/data/{$vo.id}.html" target="_blank">{$vo.title}</a></div>
+                            <div class="text">{$vo.Introduction}</div>
+                            <div class="more"><a href="__ROOT__/data/{$vo.id}.html" target="_blank" title="{$vo.title}">MORE<i class="fa fa-angle-double-right"></i></a></div>
+                        </div>
+                    </li>
+                    </volist>
+                </ul>
+                <div class="listpage">{$_page}</div>
+                <else/>
+                <div class="nodata">暂无相关内容</div>
+                </notempty>
+            </div>
+        </div>
+    </div>
+</div>
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script"></block>

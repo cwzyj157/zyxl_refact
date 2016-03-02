@@ -1,0 +1,135 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+a.disabled,a.disabled:hover{color:#ececec; background-color:#818181;}
+a.disabled.step_1{ width:150px;}a.disabled.step_1{width:260px;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Index/backup')}">数据管理</a>><span>备份数据库</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U(ACTION_NAME)}" class="cur">备份数据库</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<a href="{:U('reduction')}">还原数据库</a>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th>数据表名</th>
+				<th width="8%">数据量</th>
+				<th width="8%">数据大小</th>
+				<th width="12%">创建时间</th>
+                <th width="12%">更新时间</th>
+				<th width="12%">备份状态</th>
+                <th width="12%">操作选项</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form id="form1" name="form1" method="post" action="{:U('resort')}">
+            <notempty name="list">
+                <volist name="list" id="table">
+                <tr>
+                    <td><input type="checkbox" checked="checked" class="select_id" name="tables[]" id="{$table.name}" value="{$table.name}"/></td>
+                    <td><div class="dataTitile">{$table.name}</div></td>
+                    <td>{$table.rows}</td>
+                    <td>{$table.data_length|format_bytes}</td>
+                    <td>{$table.create_time}</td>
+                    <td>{$table.update_time}</td>
+                    <td class="info">未备份</td>
+                    <td class="editstyle"><a href="{:U('resort?action=optimize&tables='.$table['name'])}">优化表</a>|<a href="{:U('resort?action=repair&tables='.$table['name'])}">修复表</a></td>
+                </tr>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="8">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l">
+                            <a href="javascript:;" id="export" class="w120 h25">立即开始备份</a>
+                            <a href="javascript:;" onclick="sent_act('optimize');" class="w100 h25">优化数据表</a>
+                            <a href="javascript:;" onclick="sent_act('repair');" class="w100 h25">修复数据表</a>
+                            </div>
+                            <input type="hidden" name="action" id="action"/>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="8"><div class="no_data">暂无任何相关菜单</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	var $form   = $("#form1");
+	var $export = $("#export");
+	var tables;
+	$export.click(function(){
+		$export.parent().children().addClass("disabled");
+		$export.addClass("step_1");
+		$export.html("正在发送备份请求...");
+		$.post(
+			$form.attr("action")+'&action=backup',
+			$form.serialize(),
+			function(data){
+				if(data.status){
+					tables = data.tables;
+					$export.removeClass('setp_1').addClass('setp_2');
+					$export.html(data.info + "开始备份，请不要关闭本页面！");
+					backup(data.tab);
+					window.onbeforeunload = function(){ return "正在备份数据库，请不要关闭！" }
+				} else {
+					alert(data.info);
+					return false;
+				}
+			},
+			"json"
+		);
+            return false;
+	});	
+	function backup(tab, status){
+            status && showmsg(tab.id, "开始备份...(0%)");
+            $.get($form.attr("action")+'&action=backup', tab, function(data){
+                if(data.status){
+                    showmsg(tab.id, data.info);
+                    if(!$.isPlainObject(data.tab)){
+                        $export.parent().children().removeClass("disabled");						
+                        $export.html("本次备份已完成");
+                        window.onbeforeunload = function(){ return null }
+                        return;
+                    }
+                    backup(data.tab,tab.id != data.tab.id);
+                } else {
+                    updateAlert(data.info,'alert-error');
+                    $export.parent().children().removeClass("disabled");
+                    $export.html("立即备份");
+                    setTimeout(function(){
+    	                $('#top-alert').find('button').click();
+    	                $(that).removeClass('disabled').prop('disabled',false);
+    	            },1500);
+                }
+            }, "json");
+
+	}
+	function showmsg(id, msg){
+		$('#'+tables[id]).closest("tr").find(".info").html(msg);
+	}
+	//左侧高亮
+	highlight_subnav('{:U('backup')}');
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

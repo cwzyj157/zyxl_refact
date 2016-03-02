@@ -1,0 +1,80 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>修改{$type_text}标签</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">修改{$type_text}标签</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">标签名称：</td>
+				<td class="inp"><input type="text" name="tagname" id="tagname" class="f_input w400" value="{$info.tagname|default=''}" /><span class="f_tip" id="tip_title">( * 标签名称不能为空 )</span></td>
+			</tr>            
+            <tr>
+				<td class="msg">是否为热门标签：</td>
+				<td class="inp">
+					<label class="f_label" for="topshow_a"><input type="radio" id="topshow_a" name="is_show" value="1">是</label>
+                    <label class="f_label" for="topshow_b"><input type="radio" id="topshow_b" name="is_show" value="0">否</label>
+				</td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <input type="hidden" id="id" name="id" value="{$info.id|default = 0}" />
+                        <input type="submit" name="submit" id="submit" class="btn w100 h30" value="保存修改" />
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a>
+                       </div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var tagname = $('#tagname').val();
+		if (tagname == ''){
+			form_inputMsg('tagname','标签名称不能为空!','error');
+			return false;
+		}
+	}
+$(function(){
+	Think.setValue("is_show", {$info.is_show|default = 0});
+	highlight_subnav('{:U("tags/index")}');
+	var sType   = {$Think.config.CATEGORY_SHOWTYPE};
+	var sCuttle = {$Think.config.CATEGORY_MENU_CUTTLE};
+	var cateid  = {$cateid|default=0};
+	if (sType){
+		//左侧菜单是否折叠
+		if (sCuttle){
+			$('.menu_nav').hide();
+			if (!cateid){
+				$('.menu_tab').children('.menu_nav').eq(0).show();
+			}else{
+				$('.cate_'+cateid).parent('ul').show();
+			}
+			$('.cate_{$pid}').parent('ul').show();
+			//关闭或者打开Menu
+			$('.menu_tab h2').click(function (){
+				$('.menu_tab ul').slideUp(150);
+				submenu = $(this).parent().find('ul');
+				if (submenu.is(':visible'))
+					submenu.slideUp(150);	
+				else
+					submenu.slideDown(200);	
+			});
+		}
+	}
+})
+</script>
+</block>

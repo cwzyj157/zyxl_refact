@@ -1,0 +1,68 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.paging a{position:relative;}
+.paging a i{display:block; width:13px; height:13px; position:absolute; top:-5px; right:-7px; background:url(__IMG__/tanhao.png) no-repeat;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:vod(0);" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix"><div class="row_r so_Form"><a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a></div></div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" class="koo_fromBox">
+		<table>	
+        	<tr>
+				<td width="20%" class="msg">年份：</td>
+				<td class="inp">
+                <select name="year" id="year" class="f_select">
+                <?php
+                	for($i=2008;$i<=2020;$i++){
+                   		echo '<option value="'.$i.'">'.$i.'年</option>  ';
+                    }
+                ?>       
+                </select>
+                </td>
+			</tr>
+            <tr>
+				<td width="20%" class="msg">月份：</td>
+				<td class="inp">
+                <select name="month" id="month" class="f_select">
+                <?php
+                	for($i=1;$i<=13;$i++){
+                   		echo '<option value="'.$i.'">'.$i.'月</option>  ';
+                    }
+                ?>        
+                </select>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg" width="20%">发展历程描述：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w500" value="{$info.title|default=''}" datatype="s2-50" /><span class="Validform_checktip"><font color="#ff0000"> * </font>请输入内容</span></td>
+			</tr>
+           
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <input type="hidden" id="id" name="id" value="{$info.id|default = 0}" />
+                        <input type="submit" name="submit" id="submit" class="btn w100 h30" value="提交表单" />
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+Think.setValue("year", "{$info.year|default=2016}");
+Think.setValue("month", "{$info.month|default=1}");
+$(function(){
+	highlight_subnav("{:U('index')}");
+});
+</script>
+</block>

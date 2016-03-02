@@ -1,0 +1,79 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">系统设置</a>><a href="{:U('Menu/index')}">菜单列表</a>><present name='data'><a href="{:U('Menu/index?pid='.$data['pid'])}">{$data.title}</a>></present><span>{$page_tip.page_name}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{$Think.cookie.__forward__}">菜单管理</a><a href="javascript:;" class="cur">{$page_tip.page_name}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td width="220" class="msg">上级菜单：</td>
+				<td class="inp">
+                    <select name="pid" class="f_select">
+                        <volist name="Menus" id="menu">
+                            <option value="{$menu.id}">{$menu.title_show}</option>
+                        </volist>
+                    </select>
+                </td>
+			</tr>
+			<tr>
+				<td class="msg">菜单名称：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w200" value="{$info.title|default=''}" /><span class="f_tip" id="tip_title">( * 菜单标题不能为空 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">菜单链接：</td>
+				<td class="inp"><input type="text" name="url" id="url" class="f_input w200" value="{$info.url|default=''}" /><span class="f_tip" id="tip_url">( * 请填写U函数解析的URL或者外链 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">菜单分组：</td>
+				<td class="inp"><input type="text" name="group" id="group" class="f_input w200" value="{$info.group|default=''}" /><span class="f_tip">( * 用于左侧二级菜单分组 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">排列序号：</td>
+				<td class="inp"><input type="text" name="sort" id="sort" class="f_input w60" value="{$info.sort|default='1'}" /><span class="f_tip">( * 显示的排列序号 )</span></td>
+			</tr>
+            <tr>
+				<td class="msg">是否隐藏：</td>
+				<td class="inp">
+                	<label class="f_label" for="radio_a"><input type="radio" id="radio_a" name="hide" value="1">是</label>
+                    <label class="f_label" for="radio_b"><input type="radio" id="radio_b" name="hide" value="0">否</label>
+                    <span class="f_tip">( * 是否在后台隐藏 )</span>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="hidden" id="id" name="id" value="{$info.id|default = 0}" /><input type="submit" name="submit" id="submit" class="btn w100 h30" value="{$page_tip.btn_name}" /><a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	function check_from(){
+		var title = $('#title').val();
+		var url = $('#url').val();
+		if (title == ''){
+			form_inputMsg('title','菜单标题不能为空,请输入标题','error');
+			return false;
+		}
+		if (url == ''){
+			form_inputMsg('url','请填写U函数解析的URL或者外链','error');
+			return false;
+		}
+	}
+	Think.setValue("pid",{$info.pid|default = 0});
+	Think.setValue("hide", {$info.hide|default = 0});
+	highlight_subnav('{:U('index')}');
+</script>
+</block>

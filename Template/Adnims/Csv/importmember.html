@@ -1,0 +1,56 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>导入Excel数据</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">导入Excel数据</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form"></div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post">
+		<table>
+            <tr>
+				<td class="msg" width="20%">上传Csv文件：</td>
+				<td class="inp">
+                <input type="text" name="csvfile" id="csvfile" class="f_input w300" value=""/>
+                <input type="file" id="upload_csvfile" class="up_file">
+				<script src="./Public/Common/widget/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+                <link href="./Public/Common/widget/uploadify/uploadify.css" rel="stylesheet" type="text/css">
+                <script type="text/javascript">
+                $("#upload_csvfile").uploadify({
+                        'formData'     : {
+                            'timestamp' : '1439863988',
+                            'token'     : '077540e587fff10f26e78684fab2381c',
+                            'picdir'    : 'csvtmp'
+                        },
+                    'height'          : 24,
+                    'width'           : 120,
+                    'swf'             : './Public/Common/widget/uploadify/uploadify.swf',
+                    'uploader'        : './Public/Common/widget/uploadify/uploadify.php',
+                    'buttonText'      : '上传CSV文件',		        
+                    'removeTimeout'	  : 1,
+                    'fileTypeExts'	  : '*.xls;*.xlsx',
+                    'onUploadSuccess' : function (file,data,response){var rst=JSON.parse(data);var picUrl = rst.url.replace('../../../../Upload/','');$('#csvfile').val(picUrl);},
+                    'onFallback' 	  : function(){alert('未检测到兼容版本的Flash,请确定已经正常安装最新版的Flash Player');}
+                });
+                </script>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><input type="submit" name="submit" id="submit" class="btn w100 h30" value="导入Excel数据" /></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	highlight_subnav('{:U("importmember")}');
+</script>
+</block>

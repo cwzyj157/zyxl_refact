@@ -1,0 +1,99 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<script type="text/javascript" src="/Public/admin/js/ZeroClipboard.js"></script>
+<style type="text/css">
+.colldemo a{color:#c00;}
+.colldemo a,.colldemo span{ margin:0 5px;}
+.demotext{margin-left:0px;padding-left:0px;color:#00f;float:left;}
+.demoPics{padding:5px 15px 15px 5px;}
+.demoPics li{float:left; margin-top:10px; margin-left:10px; width:160px; height:120px; border:1px solid #dedede; padding:1px;}
+.demoPics li img{width:160px; height:120px;}
+.demoPicurl li {float:left; width:230px; text-indent:10px; height:25px; line-height:25px; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Collect/index')}">内容采集</a>><span>采集小助手</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:;" class="cur">内容采集结果</a></div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U('collsingle')}" method="post" onSubmit="return check_from()">
+		<table>
+			<tr>
+				<td class="msg" width="220">目标站：</td>
+				<td class="inp colldemo"><span>{$collect_type.title}</span>><a href="{$collect_type.url}" target="_blank">{$collect_type.url}</a>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg">目标内容页地址：</td>
+				<td class="inp"><a href="{$collurl}" target="_blank"><u>{$collurl}</u></a></td>
+			</tr>
+            <tr>
+            	<td height="10" style="height:10px; line-height:10px;" colspan="2"></td>
+            </tr>
+            <tr>
+				<td class="msg">内容标题：</td>
+				<td class="inp colldemo"><input type="text" name="title" class="f_input w200" value="{$coll_result.title}" onclick="selectthis(this)"/></td>
+			</tr>
+            <tr>
+				<td class="msg">缩微图：</td>
+				<td class="inp"><a href="{$coll_result.pic}" target="_blank"><img src="{$coll_result.pic}" /></a>
+				</td>
+			</tr>
+            <tr>
+				<td class="msg">游戏分类：</td>
+				<td class="inp"><input type="text" name="leixing" class="f_input w200" value="{$coll_result.classname}"  onclick="selectthis(this)"/></td>
+			</tr>      
+            <tr>
+				<td class="msg">其他属性：</td>
+				<td class="inp">{$coll_result.gamesize}&nbsp;&nbsp;游戏宽度：{$coll_result.width}&nbsp;&nbsp;游戏高度：{$coll_result.height}</td>
+			</tr>
+            <tr>
+				<td class="msg">Flash游戏标签：</td>
+				<td class="inp"><input type="text" name="title" class="f_input w200" value="{$coll_result.label|RemoveAllhtml}"  onclick="selectthis(this)"/></td>
+			</tr>
+            <tr>
+				<td class="msg">swf文件右键下载：</td>
+				<td class="inp"><a href="{$coll_result.swfurl}" target="_blank"><u>{$coll_result.swfurl}</u></a></td>
+			</tr>            
+            <tr>
+				<td class="msg">操作指南：</td>
+				<td class="inp upLoad"><textarea name="caizuotxt" class="f_textarea" style="width:500px;height:40px; line-height:16px"  onclick="selectthis(this)">{$coll_result.caozuo}</textarea></td>
+			</tr>
+            <tr>
+				<td class="msg">如何开始：</td>
+				<td class="inp upLoad"><textarea name="kaishitxt" class="f_textarea" style="width:500px;height:40px; line-height:16px"  onclick="selectthis(this)">{$coll_result.kaishi}</textarea></td>
+			</tr> 
+            <tr>
+				<td class="msg">游戏目标：</td>
+				<td class="inp upLoad"><textarea name="mubiaotxt" class="f_textarea" style="width:500px;height:40px; line-height:16px"  onclick="selectthis(this)">{$coll_result.mubiao}</textarea></td>
+			</tr> 
+            <tr>
+				<td class="msg">游戏简介：</td>
+				<td class="inp upLoad"><textarea name="jieshaotxt" class="f_textarea" style="width:500px;height:40px; line-height:16px"  onclick="selectthis(this)">{$coll_result.jieshao}</textarea></td>
+			</tr> 
+               
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l"><a href="{:U('collect/onepage')}" class="w100 h30">返回小助手</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+	copySpan('demotitle','copyTitle');
+	function check_from(){
+		var collurl = $('#collurl').val();
+		if (collurl == ''){
+			form_inputMsg('collurl','请输入采集目标站内容页地址','error');
+			return false;
+		}
+	}
+	highlight_subnav('{:U('collect/onepage')}');
+</script>
+</block>

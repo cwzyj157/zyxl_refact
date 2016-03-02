@@ -1,0 +1,70 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">充值卡管理首页</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Paycard/add')}"  class="cur">生成充值卡</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        <a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a>        	
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="fromTable">
+        <form class="koo_fromBox" action="{:U()}" method="post">
+		<table>
+            <tr>
+				<td class="msg">选择充值卡金额：</td>
+				<td class="inp">
+                	<volist name='PAYCARD_TYPE' id='value'>
+                	<label class="f_label" for="radio_{$key}"><input type="radio" id="radio_{$key}" name="type" value="{$key}">{$value}元充值卡</label>
+                    </volist>
+                </td>
+			</tr>
+            
+            <tr>
+				<td class="msg" width="20%">生成充值卡张数：</td>
+				<td class="inp">
+                <input type="text" name="totalnum" id="totalnum" class="f_input w100" value="10" datatype="n1-2" sucmsg="充值卡张数输入正确" nullmsg="请输入充值卡张数" errormsg="充值卡张数格式不正确"/><span class="f_tip" style="color:#00f">张</span>
+                <span class="Validform_checktip">每次最多生成99张</span>             
+                </td>
+			</tr>
+            <tr>
+				<td class="msg" width="20%">设置充值卡有效期：</td>
+				<td class="inp">
+                <input type="text" name="limitday" id="limitday" class="f_input w100" value="90" datatype="n1-3" sucmsg="网站关键词输入正确" nullmsg="请输入网站关键词" errormsg="网站关键词格式不正确"/><span class="f_tip" style="color:#00f">天</span>
+                <span class="Validform_checktip"></span>
+                </td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <input type="hidden" id="id" name="id" value="{$info.id|default=0}" />
+                        <input type="submit" name="submit" id="submit" class="btn w100 h30" value="提交表单" />
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a>
+                        </div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+	$(".koo_fromBox").Validform({
+		tiptype:4,
+		postonce:true,
+		beforeSubmit:function(curform){
+			if(!confirm('你确定现在生成充值卡吗?')){
+				return false;
+			}
+		},
+	});
+});
+Think.setValue("type",0);
+highlight_subnav("{:U('Paycard/add')}");
+</script>
+</block>

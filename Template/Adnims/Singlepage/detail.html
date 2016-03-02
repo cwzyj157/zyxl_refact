@@ -1,0 +1,77 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+.paging a{position:relative;}
+.paging a i{display:block; width:13px; height:13px; position:absolute; top:-5px; right:-7px; background:url(__IMG__/tanhao.png) no-repeat;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span><a href="{:U('Index/index')}">管理首页</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="javascript:vod(0);" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix"><div class="row_r so_Form"><a href="{$Think.cookie.__forward__}" class="so_btn w100 h20">返回上一页</a></div></div>
+</block>
+<block name="body">
+	<div class="fromTable">
+    	<form name="form1" id="form1" action="{:U()}" method="post" class="koo_fromBox">
+		<table>	
+        	<tr>
+				<td width="20%" class="msg">页面分类：</td>
+				<td class="inp">
+                <select name="status" id="status" class="f_select">
+                <volist name='TYPE_CONFIG' id='vo'>
+                <option value="{$key}">{$vo}</option>       
+                </volist>         
+                </select>
+                </td>
+			</tr>
+            <tr>
+				<td class="msg" width="20%">单页面名称：</td>
+				<td class="inp"><input type="text" name="title" id="title" class="f_input w300" value="{$info.title|default=''}" datatype="s2-20" /><span class="Validform_checktip"><font color="#ff0000"> * </font>请输入页面标题</span></td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">单页面标题：</td>
+				<td class="inp"><input type="text" name="fulltitle" id="fulltitle" class="f_input w300" value="{$info.fulltitle|default=''}" />
+				  <span class="f_tip" id="tip_name">( * 请输入页面标题)</span></td>
+			</tr>
+			<tr style="display:none;">
+				<td class="msg">单页面英文名称：</td>
+				<td class="inp"><input type="text" name="page_path" id="page_path" class="f_input w300" value="{$info.page_path|default=''}" /><span class="f_tip" id="tip_name">( * 页面英文名称)</span></td>
+			</tr>
+            <tr style="display:none">
+				<td class="msg">SEO标题：</td>
+				<td class="inp"><input type="text" name="seotitle" id="seotitle" class="f_input w500" value="{$info.seotitle|default=''}" /><span class="f_tip">( * 页面SEO标题 )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO关键词：</td>
+				<td class="inp"><input type="text" name="keywords" id="keywords" class="f_input w500" value="{$info.keywords|default=''}" /><span class="f_tip">( * 页面SEO关键词 )</span></td>
+			</tr>
+			<tr style="display:none">
+				<td class="msg">SEO内容描述：</td>
+				<td class="inp"><textarea name="description" id="description" class="f_textarea" style="width:500px;height:80px;">{$info.description|default = ''}</textarea></td>
+			</tr>
+            <tr>
+				<td class="msg">详细内容：</td>
+				<td class="inp u_editor">{$content_editor}</td>
+			</tr>
+			<tr class="listpage">
+				<td colspan="2">
+					<div class="action_page clearfix">
+						<div class="action_btn row_l">
+                        <input type="hidden" id="id" name="id" value="{$info.id|default = 0}" />
+                        <input type="submit" name="submit" id="submit" class="btn w100 h30" value="提交表单" />
+                        <a href="{$Think.cookie.__forward__}" class="w100 h30">返回列表</a></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+        </form>
+    </div>	
+</block>
+<block name="script">
+<script type="text/javascript">
+Think.setValue("status", "{$status|default =0}");
+$(function(){
+	highlight_subnav("{:U('index')}");
+});
+</script>
+</block>

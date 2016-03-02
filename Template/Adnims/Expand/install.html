@@ -1,0 +1,33 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+a.exp_install{color:#00f;cursor:pointer;}
+.install{ padding:30px;}
+.install h1{height:40px; line-height:40px; font-weight:bold; font-size:16px;}
+.install li{height:25px; line-height:25px; font-size:14px; text-indent:10px;}
+.install li.success{color:#008000;}
+.install li.error{color:#f00;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span>><a href="{:U('Index/index')}">后台首页</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Expand/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="install">
+    	<h1>正在{$meta_title} <font color="#0000ff">[{$expinfo.name}]</font></h1>
+        <ul id="show-list"></ul>
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+	highlight_subnav("{:U('expand/index')}");
+    function showmsg(msg,classname){
+		$('#show-list').append('<li class="'+classname+'">'+msg+'</li>');
+	}
+</script>
+</block>

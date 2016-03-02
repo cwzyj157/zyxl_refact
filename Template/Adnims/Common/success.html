@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统提示_{$WEB_NAME}|管理系统</title>
+<script src="__COMMON__/script/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="__JS__/global.js" type="text/javascript"></script>
+<link rel="stylesheet" href="__CSS__/adnim.css" type="text/css">
+<style type="text/css">
+body{background-color:#003FA9; background-image:none;}
+/*success*/
+.TipBox{margin:20px auto 0 auto; border:1px solid #0b62b5; background-color:#F5F9FD;}
+.TipBox .tipheader{height:30px; line-height:30px; color:#fff; background-color:#003895;text-align:left; padding-left:15px; font-size:14px; font-weight:bold;}
+.TipCon{text-align:center;color:#c00; height:30px; line-height:30px;font-size:12px;font-family:'宋体';}
+.TipCon span{color:#008000; font-weight:normal;margin:0 5px;}
+.TipGo{text-align:center;color:#00f; height:25px; line-height:25px;}
+.TipGo a{color:#00f; text-decoration:underline;}
+</style>
+</head>
+<body>
+<table width="60%" border="0" align="center" cellspacing="0" class="TipBox">
+    <tr>
+        <td class="tipheader">系统友情提示</td>
+    </tr>
+    <tr>
+        <td height="120">
+            <div class="TipCon"><?php if($message) echo $message;?><?php if($error)echo $error;?></div>
+            <div class="TipGo"><A href="{$jumpUrl}">{$waitSecond}秒钟后自动跳转，如果您的浏览器没响应，请点击这里...</A></div
+        ></td>
+    </tr>
+</table>
+<script src="__JS__/adnim.js" type="text/javascript"></script>
+<meta http-equiv="refresh" content="{$waitSecond}; url={$jumpUrl}" />
+</body>
+</html>

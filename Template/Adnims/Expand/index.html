@@ -1,0 +1,51 @@
+<extend name="Common/basepage"/>
+<block name="style">
+<style type="text/css">
+a.exp_install{color:#00f;cursor:pointer;}
+a.exp_uninstall{color:#ccc;cursor:pointer;}
+</style>
+</block>
+<block name="map"><span class="map">当前位置：</span>><a href="{:U('Index/index')}">后台首页</a>><span>扩展功能管理</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Expand/index')}" class="cur">扩展功能管理</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="10%">OpenID</th>
+				<th>扩展名称</th>
+				<th width="20%">是否安装</th>
+				<th width="20%">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+                <volist name="lists" id="list">
+                <tr>
+                    <td>{$key}</td>
+                    <td><div class="dataTitile">{$list.name}</div></td>
+                    <td>{$list.status_text}</td>
+                    <td>{$list.status_btn}</td>
+                </tr>
+                </volist>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+	//删除操作询问提示
+	$('.exp_uninstall').click(function(){
+        var that = this;
+		if(!confirm('删除该扩展后，所有相关数据就将清空且无法还原\n您还是确定要删除改扩展吗？')){
+			return false;
+		}
+	});
+	highlight_subnav("{:U('expand/index')}");
+</script>
+</block>

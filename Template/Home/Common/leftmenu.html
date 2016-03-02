@@ -1,0 +1,45 @@
+<if condition="[type] eq 'about' ">
+	<ul class="leftmenu">
+		<li class="jianjie"><a href="__ROOT__/about">公司简介</a></li>
+		<li class="fazhanlicheng"><a href="__ROOT__/about/fazhanlicheng">发展历程</a></li>
+		<li class="qiyewenhua"><a href="__ROOT__/about/qiyewenhua">企业文化</a></li>
+		<li class="zuzhijiagou"><a href="__ROOT__/about/zuzhijiagou">组织架构</a></li>
+		<li class="guanlituandui"><a href="__ROOT__/about/guanlituandui">管理团队</a></li>
+	</ul>    
+</if>
+
+<if condition="[type] eq 'business' ">
+	<ul class="leftmenu">
+		<li class="business"><a href="__ROOT__/business">主营业务</a></li>
+		<li class="fuwumoshi"><a href="__ROOT__/business/fuwumoshi">服务模式</a></li>
+		<li class="yingxiaomoshi"><a href="__ROOT__/business/yingxiaomoshi">营销模式</a></li>
+		<li class="yinglimoshi"><a href="__ROOT__/business/yinglimoshi">盈利模式</a></li>
+	</ul>    
+</if>
+
+<if condition="[type] eq 'job' ">
+	<ul class="leftmenu">
+		<li class="job"><a href="__ROOT__/job">人才招聘</a></li>
+        <li class="rencaichengzhang"><a href="javascript:vod(0)">人才成长</a></li>
+		<li class="min shangxueyuan"><a href="__ROOT__/job/shangxueyuan">商学院介绍</a></li>
+		<li class="min fazhantongdao"><a href="__ROOT__/job/fazhantongdao">人才发展通道</a></li>
+	</ul>    
+</if>
+
+<if condition="[type] eq 'contact' ">
+	<ul class="leftmenu">
+		<volist name='shengfen' id='vo'>
+        <li class="contact_{$vo.id}"><a href="__ROOT__/contact/lists_{$vo.id}.html">{$vo.title}</a></li>
+        </volist>
+	</ul>    
+</if>
+
+<if condition="[type] eq 'news' ">
+	<ul class="leftmenu">
+		<volist name='Cate' id='vo'>
+        <li class="cate_{$vo.id}"><a href="__ROOT__/news/{$vo.id}_1.html">{$vo.title}</a></li>
+        </volist>
+	</ul>    
+</if>
+
+<script type="text/javascript">$('.{$classmulu}').addClass('on');</script>

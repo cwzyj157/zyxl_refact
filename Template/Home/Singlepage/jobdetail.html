@@ -1,0 +1,51 @@
+<extend name="Common:basepage"/>
+<block name="style">
+<style type="text/css">
+
+</style>
+</block>
+<block name="body">
+<include file='Common/header' type="common"/>
+<div class="slideBox">
+	<?php if (count($flashpic) > 1){ ?><div class="hd"><volist name='flashpic' id='vo'><span>{$key}</span></volist></div><?php } ?>
+    <div class="bd">
+    	<ul>
+        <volist name='flashpic' id='vo'>
+        <?php        
+        $pic = $vo['pic'];
+        $bgcolor = ($vo['pic2']) ? $vo['pic2'] : '#fff';
+        if($vo['url']){
+        	echo '<li><a href="'.$vo['url'].'" target="_blank" style="background:url(/Upload/'.$pic.') '.$bgcolor.' center top no-repeat;"></a></li>';
+        }else{
+        	echo '<li style="background:url(/Upload/'.$pic.')  '.$bgcolor.' center top no-repeat;"></li>';
+        }
+        ?>     
+        </volist>
+        </ul>        
+    </div>
+</div>
+<script type="text/javascript">jQuery(".slideBox").slide({titCell:".hd span",mainCell:".bd ul",effect:"fold",trigger:"click",delayTime:2000,autoPlay:true});</script>
+<div class="warp1200">
+	<div class="mainBox clearfix">
+    	<div class="leftBox row_l">
+        	<div class="classname">
+            	<p class="en">TALENT DEMAND</p><p class="cn">人才需求</p>
+            </div>
+            <include file='Common/leftmenu' type="job"/>
+        </div>
+        <div class="rightBox row_r">
+        	<div class="sitemap">您现在的位置：<a href="__ROOT__/">首页</a>><a href="__ROOT__/job">人才需求</a>><span>{$classname}</span></div>
+        	<div class="pagetitle">{$classname}</div>
+            <div class="contentBox">
+          	{$Content}
+            </div>
+        </div>
+    </div>
+</div>
+<include file='Common:footer' type="common"/>
+</block>
+<block name="script">
+<script  type="text/javascript">
+ $('.rencaichengzhang').addClass('on');
+</script>
+</block>

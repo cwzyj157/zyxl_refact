@@ -1,0 +1,98 @@
+<extend name="Common/basepage"/>
+<block name="style"></block>
+<block name="map"><span class="map">当前位置：</span><a href="__APP__">管理首页</a>><a href="{:U('Config/group')}">系统设置</a>><span>{$meta_title}</span></block>
+<block name="pagelink">
+	<div class="pageUrl"><a href="{:U('Adminer/index')}" class="cur">{$meta_title}</a></div>
+	<div class="soType clearfix">
+    	<div class="row_r so_Form">
+        	<a href="{:U('Adminer/add')}">添加管理员</a>
+            <input type="text" name="sokey" id="sokey" class="so_input w150 h20" value="{:I('sokey')}" placeholder="请输入管理员帐号">
+            <input type="button" value="搜 索" id="search" class="so_btn w60 h20" url="{:U(ACTION_NAME)}"/>
+        </div>
+	</div>
+</block>
+<block name="body">
+	<div class="listTable table_striped">
+		<table>
+			<thead>
+			<tr>
+				<th width="6%"><input type="checkbox" class="check_all" /></th>
+				<th width="6%">ID</th>
+				<th width="12%">管理员帐号</th>
+				<th width="12%">真实姓名</th>
+                <th width="12%">所属权限组</th>
+                <th width="12%">上次登录时间</th>
+                <th>上次登录IP/地址</th>	
+                <th width="7%">登录次数</th>	
+				<th width="10%">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<form name="form1" id="form1" action="{:U('Adminer/index')}" method="post">
+            <notempty name="list">
+                <volist name="list" id="data">
+                <tr>
+                    <td><input type="checkbox" class="select_id" name="check_id" value="{$data.id}"/></td>
+                    <td>{$data.id}</td>
+                    <td>{$data.username}{$data.islocked_text}</td>
+                    <td>{$data.truename}</td>
+                    <td>{$data.user_group}</td>
+                    <td>{$data.last_login_time|toDate="Y-m-d H:i:s"}</td>
+                    <td>{:long2ip($data['last_login_ip'])}<span style="color:#008000; margin-left:10px;"><a href="http://www.ip138.com/ips138.asp?ip={:long2ip($data['last_login_ip'])}" target="_blank"><font color="#008000">查看地址</font></a></span></td>
+                    <td>{$data.login_times}</td>                    
+                    <td class="editstyle"><a href="{:U('edit?id='.$data['id'])}">编辑</a>|<a class="confirm" href="{:U('del?id='.$data['id'])}">删除</a></td>
+                </tr>
+                </volist>
+                <tr class="listpage">
+                	<td colspan="9">
+                    	<div class="action_page clearfix">
+                        	<div class="action_btn row_l"><a href="{:U('Adminer/add')}" class="w100 h25">添加新管理员</a></div>
+                            <div class="page_no row_r">{$_page}</div>
+                            <input type="hidden" name="action" id="action"/>
+                        </div>
+                    </td>
+                </tr>
+            <else/>
+            	<tr><td colspan="9"><div class="no_data">暂无任何参数配置</div></td></tr>
+            </notempty>
+            </form>
+			</tbody>
+		</table>
+    </div>    	
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+ //搜索功能
+	$("#search").click(function() {
+		var url = $(this).attr('url');
+		var query = $('.so_Form').find('input').serialize();
+		query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
+		query = query.replace(/^&/g, '');
+		if (url.indexOf('?') > 0) {
+			url += '&' + query;
+		} else {
+			url += '?' + query;
+		}
+		window.location.href = url;
+	});
+	//回车搜索
+	$("#sokey").keyup(function(e) {
+		if (e.keyCode === 13) {
+			$("#search").click();
+			return false;
+		}
+	});
+	//左侧高亮
+	highlight_subnav('{:U('index')}');
+});
+function sent_act(action){
+	if (!action){
+		alert('参数错误，请返回重新选择操作选项');
+		return false;
+	}
+	$('#action').val(action);
+	document.form1.submit();
+}
+</script>
+</block>

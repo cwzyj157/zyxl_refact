@@ -1,0 +1,18 @@
+<volist name="tree" id="tree">
+	<dl class="class_tree">
+		<dt class="class_tree_cf">
+			<div class="id">{$tree.id}</div>
+			<div class="order"><input type="text" name="sort_{$tree.id}" value="{$tree.sort}" class="reset_sort" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/></div>
+			<div class="public">{$tree.allow_publish_text}</div>
+            <div class="fold">{:R('Category/tree_f',array($tree))}</div>
+			<div class="name">{:R('Category/tree_s',array($tree))}</div>			
+            <div class="edit"><a href="{:U('edit?id='.$tree['id'].'&pid='.$pid)}">编辑</a></div>
+			<div class="model">{$tree.model|showModel="0"}</div>
+		</dt>
+		<notempty name="tree['_']">
+			<dd>
+				{:R('Category/tree', array($tree['_']))}
+			</dd>
+		</notempty>
+	</dl>
+</volist>
