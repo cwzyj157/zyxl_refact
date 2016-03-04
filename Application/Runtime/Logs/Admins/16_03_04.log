@@ -1,0 +1,733 @@
+[ 2016-03-04T13:17:35+08:00 ] ::1 /zyxl_refact/?XDEBUG_SESSION_START=13227
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+
+[ 2016-03-04T13:18:29+08:00 ] ::1 /zyxl_refact/?XDEBUG_SESSION_START=13227
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+
+[ 2016-03-04T13:18:34+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000104s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001197s ]
+
+[ 2016-03-04T13:19:22+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0561s ]
+
+[ 2016-03-04T13:20:06+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0032s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0351s ]
+
+[ 2016-03-04T13:20:17+08:00 ] ::1 /zyxl_refact/?XDEBUG_SESSION_START=16346
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+
+[ 2016-03-04T13:20:36+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000107s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0014s ]
+
+[ 2016-03-04T13:23:01+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0043s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+
+[ 2016-03-04T13:25:02+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001342s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0043s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+
+[ 2016-03-04T13:27:23+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0059s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 22 行.
+
+[ 2016-03-04T13:27:41+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+
+[ 2016-03-04T13:28:19+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000106s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' xdebug://debug-eval 第 1 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 22 行.
+
+[ 2016-03-04T13:28:23+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+
+[ 2016-03-04T13:28:24+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000154s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006422s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001277s ]
+
+[ 2016-03-04T13:28:24+08:00 ] ::1 /zyxl_refact/Public/Admins/script/global.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:24+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001069s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-03-04T13:28:25+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:25+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000121s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002117s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:25+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+
+[ 2016-03-04T13:28:25+08:00 ] ::1 /zyxl_refact/Public/Admins/images/loginbj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000099s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+
+[ 2016-03-04T13:28:25+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+
+[ 2016-03-04T13:28:52+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000352s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000857s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001480s ]
+
+[ 2016-03-04T13:28:52+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:52+08:00 ] ::1 /zyxl_refact/Public/Admins/script/global.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:52+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000100s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:28:53+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000918s ]
+
+[ 2016-03-04T13:28:53+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+
+[ 2016-03-04T13:28:53+08:00 ] ::1 /zyxl_refact/Public/Admins/images/loginbj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+
+[ 2016-03-04T13:28:53+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+
+[ 2016-03-04T13:29:04+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+
+[ 2016-03-04T13:29:06+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000101s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000232s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000619s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010767s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001098s ]
+
+[ 2016-03-04T13:29:06+08:00 ] ::1 /zyxl_refact/Public/Admins/script/global.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:29:06+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:29:07+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000806s ]
+
+[ 2016-03-04T13:29:07+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:29:07+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+
+[ 2016-03-04T13:29:07+08:00 ] ::1 /zyxl_refact/Public/Admins/images/loginbj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-03-04T13:29:07+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000707s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001364s ]
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/script/global.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000110s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/images/loginbj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000127s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+
+[ 2016-03-04T13:45:10+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000150s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000670s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000727s ]
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 36 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001161s ]
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/Public/Admins/script/global.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000148s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001673s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:45:38+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+
+[ 2016-03-04T13:45:39+08:00 ] ::1 /zyxl_refact/Public/Admins/images/loginbj.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+
+[ 2016-03-04T13:45:39+08:00 ] ::1 /zyxl_refact/Public/Admins/images/dl.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+
+[ 2016-03-04T13:46:18+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000431s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017839s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002354s ]
+
+[ 2016-03-04T13:46:18+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=code&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\CodeController.class.php 第 10 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2016-03-04T13:46:18+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:59:23+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001377s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000274s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000549s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000702s ]
+
+[ 2016-03-04T13:59:24+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=getvalidatecode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 106 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001590s ]
+
+[ 2016-03-04T13:59:24+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T13:59:27+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000225s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000464s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2016-03-04T13:59:28+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=getvalidatecode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001041s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 106 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-03-04T13:59:28+08:00 ] ::1 /zyxl_refact/Public/Admins/style/adnim.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T14:00:44+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006902s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2016-03-04T14:00:45+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=getvalidatecode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 106 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+NOTIC: [2] imagettftext(): Invalid font filename D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ValidateCodeHelper.class.php 第 25 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-03-04T14:00:45+08:00 ] ::1 /zyxl_refact/Public/Admins/script/admin.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-03-04T14:02:19+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001798s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006441s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-03-04T14:02:20+08:00 ] ::1 /zyxl_refact/index.php?m=admins&c=login&a=getvalidatecode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\PHP\xampp\htdocs\zyxl_refact\Application\Admins\Controller\LoginController.class.php 第 106 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2016-03-04T14:02:20+08:00 ] ::1 /zyxl_refact/Public/Admins/script/admin.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+ERR: 无法加载控制器:Public
+

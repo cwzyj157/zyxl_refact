@@ -18,9 +18,9 @@ if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 define('APP_DEBUG',True);
 
 // 定义应用目录
-define('APP_PATH','./Apps/');
+define('APP_PATH','./Application/');
 // 定义公共路径
-//define('COMMON_PATH','./Apps/Common/');
+//define('COMMON_PATH','./Application/Common/');
 
 // 注释掉绑定模块的定义
 define('BIND_MODULE','Admins');

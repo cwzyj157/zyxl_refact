@@ -1619,7 +1619,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Support: Opera 10-12/IE8
 			// ^= $= *= and empty values
 			// Should not select anything
-			// Support: Windows 8 Native Apps
+			// Support: Windows 8 Native Application
 			// The type attribute is restricted during .innerHTML assignment
 			var input = doc.createElement("input");
 			input.setAttribute( "type", "hidden" );

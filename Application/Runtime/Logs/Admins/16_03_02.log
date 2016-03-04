@@ -1,0 +1,505 @@
+[ 2016-03-02T00:21:53+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+
+[ 2016-03-02T00:21:54+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:27:56+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000261s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002328s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:27:57+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002358s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:27:57+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000199s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002374s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:27:57+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000197s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:28:00+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000206s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004875s ]
+
+[ 2016-03-02T00:28:00+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000203s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002313s ]
+ERR: 无法加载控制器:Login
+
+[ 2016-03-02T00:28:32+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000284s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002531s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0058s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:29:41+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000195s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002559s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0039s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:06+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000207s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003968s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0049s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:08+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000197s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002529s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0040s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:09+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000209s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002388s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0046s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0011s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:35+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000229s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007604s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:36+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000202s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002959s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0040s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:36+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000206s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002540s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0040s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0011s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:36+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000203s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002560s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0044s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T00:30:39+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000278s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002506s ]
+
+[ 2016-03-02T00:30:39+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000210s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002457s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0191s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T06:54:58+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000378s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011403s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003762s ]
+
+[ 2016-03-02T06:55:34+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000464s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002491s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002837s ]
+
+[ 2016-03-02T06:56:03+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000392s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001920s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003835s ]
+
+[ 2016-03-02T06:57:45+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000208s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002296s ]
+
+[ 2016-03-02T06:57:49+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003201s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0759s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0022s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:23:30+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000379s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002650s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002830s ]
+
+[ 2016-03-02T07:24:14+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000481s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002998s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003110s ]
+
+[ 2016-03-02T07:42:19+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000214s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002438s ]
+
+[ 2016-03-02T07:42:19+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002156s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0034s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:42:36+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002223s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:42:36+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000197s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002166s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:42:37+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000207s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002920s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0044s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:42:37+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002186s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0034s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0011s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:42:37+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002130s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0050s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:33+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000197s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002771s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0007s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:34+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000204s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002648s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0043s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:34+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000216s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002132s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0033s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:34+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000214s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002154s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0033s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:34+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001134s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002160s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0036s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T07:44:35+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000195s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002150s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0033s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T13:33:28+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000302s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001189s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002083s ]
+
+[ 2016-03-02T13:34:09+08:00 ]  
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000218s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001065s ]
+NOTIC: [8] Undefined index: REQUEST_METHOD D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\App.class.php 第 31 行.
+NOTIC: [8] Undefined index: REQUEST_URI D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 137 行.
+NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Dispatcher.class.php 第 191 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001943s ]
+
+[ 2016-03-02T13:35:15+08:00 ] ::1 /zyxl_refact/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-03-02T13:35:15+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0043s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T13:35:51+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0032s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T13:36:18+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0037s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0008s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+
+[ 2016-03-02T13:36:56+08:00 ] ::1 /zyxl_refact/index.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `koo_config` [ RunTime:0.0036s ]
+SQL: SELECT `type`,`name`,`value` FROM `koo_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+ERR: You cannot serialize or unserialize PDOStatement instances
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ConfigHelper.class.php:11) D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Org\ConfigHelper.class.php:11) D:\PHP\xampp\htdocs\zyxl_refact\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2016-03-02T14:00:10+08:00 ] ::1 /zyxl_refact/admins
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+ERR: 无法加载控制器:Admins
+
+[ 2016-03-02T14:01:01+08:00 ] ::1 /zyxl_refact/admins
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001672s ]
+ERR: 无法加载控制器:Admins
+
+[ 2016-03-02T14:01:37+08:00 ] ::1 /zyxl_refact/admins
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+ERR: 无法加载控制器:Admins
+

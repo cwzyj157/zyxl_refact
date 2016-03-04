@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/AdminerController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/AdmingroupController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/AdvertisingController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/AjaxController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/CategoryController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/CodeController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/CollectController.class.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/ConfigController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/CsvController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/DataController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/DatabaseController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/ExpandController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/FazhanController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/GuestbookController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/JobController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/LinksController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/MenuController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/PaycardController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/SinglepageController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/TagsController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Controller/TemplateController.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/AdminGroupModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/AdminerModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/AuthRuleModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/CategoryModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/CollectModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/ConfigModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/DataModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/ExpandModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/IndexModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/LinksModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/MenuModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/PaycardModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/PhpexcelModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/TagsModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/TemplateModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/TreeModel.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Application/Admins/Model/XhttpModel.class.php" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
